@@ -278,7 +278,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small> Escala de Calificaciones</small></h3>
+                <h3>Escala de Calificaciones</h3>
               </div>
 
               <div class="title_right">
@@ -352,7 +352,7 @@
                       		}*/
                       %>
                         <tr>
-                          <td><%=tu.getId_opcion() %></td>
+                          <td><%=tu.getId_EscalaCalificacion() %></td>
                           td><%=tu.getCalificacion() %></td>
                           <td><%=tu.getDescripcion() %></td>
                           <td><%=estado %></td>

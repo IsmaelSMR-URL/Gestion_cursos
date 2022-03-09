@@ -278,7 +278,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small> Opciones asignadas a roles</small></h3>
+                <h3>Opciones asignadas a roles</h3>
               </div>
 
               <div class="title_right">
@@ -335,27 +335,20 @@
                       <thead>
                         <tr>
                           <th>Id</th>
-                          <th>Nombre de la opción</th>
-                          <th>Descripción</th>
-                          <th>Estado</th>
+                          <th>Rol</th>
+                          <th>Opción</th>
                         </tr>
                       </thead>
                       <tbody>
                       <%-- <%
-                      for(Tbl_convocatoria to :listaConvocatoria){
-                      		String estado = "";
-                      		if(tu.getEstado()!=3){
-                      			estado = "ACTIVO";
-                      		}
-                      		else{
-                      			estado = "INACTIVO";
+                      for(){
+                      		
                       		}*/
                       %>
                         <tr>
                           <td><%=tu.getId_opcion() %></td>
-                          td><%=tu.getNombre_opcion() %></td>
-                          <td><%=tu.getDescripcion() %></td>
-                          <td><%=estado %></td>
+                          td><%=tu.getRol() %></td>
+                          <td><%=tu.getOpción() %></td>
                         </tr>
                         <%
                       	}
@@ -363,10 +356,9 @@
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th>Id</th>
-                          <th>Nombre de la opción</th>
-                          <th>Descripción</th>
-                          <th>Estado</th>
+                           <th>Id</th>
+                          <th>Rol</th>
+                          <th>Opción</th>
                         </tr>
                       </tfoot>
                     </table>
