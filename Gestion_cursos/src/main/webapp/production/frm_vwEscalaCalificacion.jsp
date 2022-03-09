@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gestion de Cursos | Escala de Calificaciones</title>
+    <title>Gestion de Cursos | Escala de Calificaciones </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -185,17 +185,17 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                                     <img src="images/img.jpg" alt="">[Profesora]
-                                </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:;"> Perfil</a>
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
-                                    </a>
-                                    <a class="dropdown-item" href="javascript:;">Ayuda</a>
-                                    <a class="dropdown-item" href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a>
-                                </div>
-                            </li>
+			                    </a>
+			                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+			                      <a class="dropdown-item"  href="javascript:;"> Perfil</a>
+			                        <a class="dropdown-item"  href="javascript:;">
+			                          <span class="badge bg-red pull-right">50%</span>
+			                          <span>Ajustes</span>
+			                        </a>
+			                    <a class="dropdown-item"  href="javascript:;">Ayuda</a>
+			                      <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a>
+			                    </div>
+			                  </li>
 
                             <li role="presentation" class="nav-item dropdown open">
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
@@ -272,7 +272,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Agregar nueva Escala de calificaciones</h3>
+                            <h3>Visualizar Escala de Calificaciones</h3>
                         </div>
 
                         <div class="title_right">
@@ -292,7 +292,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Ingrese una nueva escala de calificación </h2>
+                                    <h2>Visualizar una Escala de Calificación</h2>
                                     
                                     <div class="clearfix"></div>
                                 </div>
@@ -301,10 +301,10 @@
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
-										<div class="field item form-group">
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Calificación: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="clasificacion" id="clasificacion" placeholder="ex. A" />
+                                            	<input readonly class="form-control" name="clasificacion" id="clasificacion" placeholder="ex. A" />
 										
                                             </div>
                                         </div>
@@ -326,8 +326,8 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" >
-													<option value="net">...Seleccione</option>
+                                            	<select id="heard" class="form-control" disabled>
+													<!-- <option value="net">...Seleccione</option> -->
 													<option value="apr">Aprobado</option>
 													<option value="rep">Reprobado</option>
 												</select>
@@ -344,16 +344,14 @@
 												</select>
                                             </div>
                                         </div>
-                                        
-                             
-                                        <div class="ln_solid">
+                                        <!-- <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary">Guardar</button>
+                                                    <button type='submit' class="btn btn-primary">Eliminar</button>
                                                     <button type='reset' class="btn btn-success">Cancelar</button>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </form>
                                 </div>
                             </div>
@@ -449,5 +447,4 @@
     </script>
 
 </body>
-
 </html>
