@@ -347,10 +347,10 @@
                          					 </div>
                          					 
                          					                
-                                       <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha de Registro<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" type="date" name="ffinald" id="ffinald" placeholder="ex. Primer Semestre 2020" required="required" />
+                                            	<input readonly class="form-control" type="date" name="regDate" id="regDate" placeholder="ex. Primer Semestre 2020" required="required" />
 										
                                             </div>
                                         </div>
