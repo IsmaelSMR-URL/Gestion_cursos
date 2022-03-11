@@ -312,7 +312,7 @@
 												style="width: 100%">
 												<thead>
 													<tr>
-														<th>Id</th>
+														
 														<th>Id Uca</th>
 														<th>Nombre Real</th>
 														<th>Nombre Usuario</th>
@@ -333,20 +333,21 @@
 													for (int i = 0; i < 5; i++) {
 													%>
 													<tr>
-															<th>Id</th>
-														<th>Id Uca</th>
-														<th>Nombre Real</th>
-														<th>Nombre Usuario</th>
-														<th>Sexo</th>
-														<th>Telefono</th>
-														<th>Correo Personal</th>
-														<th>Correo institucional</th>
-														<th>Fecha de Registro</th>
-														<th>Cargo</th>
+														
+														<td>Id Uca</td>
+														<td>Nombre Real</td>
+														<td>Nombre Usuario</td>
+														<td>Sexo</td>
+														<td>Telefono</td>
+														<td>Correo Personal</td>
+														<td>Correo institucional</td>
+														<td>Fecha de Registro</td>
+														<td>Cargo</td>
+														
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Usuario"></i></a> 
+															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Usuario"></i></a> 
+															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Usuario"></i></a>
 														</td>
 													</tr>
 													<%
@@ -356,7 +357,7 @@
 
 												<tfoot>
 													<tr>
-														<th>Id</th>
+													
 														<th>Id Uca</th>
 														<th>Nombre Real</th>
 														<th>Nombre Usuario</th>
