@@ -313,7 +313,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Oferta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="name" placeholder="Primer Semestre 2020"  />
 										
                                             </div>
                                         </div>
@@ -321,7 +321,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" />
+                                            	<input class="form-control" type="date" name="finicio" id="finicio" />
 										
                                             </div>
                                         </div>
@@ -329,7 +329,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020"  />
+                                            	<input class="form-control" type="date" name="ffinal" id="ffinal"   />
 										
                                             </div>
                                         </div>
@@ -337,7 +337,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Período <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020"  />
+                                            	<input class="form-control" name="periodo" id="periodo" placeholder="1S2020"  />
 										
                                             </div>
                                         </div>
@@ -345,13 +345,14 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" />
+                                            	<input class="form-control"  name="descr" id="descr" placeholder="Ofertas dentro del periodo 1S 2020" />
 										
                                             </div>
                                         </div>
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
+                                                
                                                 	<a href="frm_addOfertaDet.jsp" target="blank" class="btn btn-primary">Guardar</a>
                                                     <button type='reset' class="btn btn-success">Cancelar</button>
                                                 </div>
@@ -398,7 +399,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" type="date" name="finiciod" id="finiciod" placeholder="ex. Primer Semestre 2020" required="required" />
+                                            	<input readonly class="form-control" type="date" name="finiciod" id="finiciod"  required="required" />
 										
                                             </div>
                                         </div>
@@ -406,7 +407,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" type="date" name="ffinald" id="ffinald" placeholder="ex. Primer Semestre 2020" required="required" />
+                                            	<input readonly class="form-control" type="date" name="ffinald" id="ffinald"  required="required" />
 										
                                             </div>
                                         </div>
@@ -414,7 +415,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" name="hinicio" id="hinicio" placeholder="ex. 1S2020" required="required" />
+                                            	<input readonly class="form-control" name="hinicio" id="hinicio" placeholder="6:00 pm"  required="required" />
 										
                                             </div>
                                         </div>
@@ -422,7 +423,15 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control"  name="hfinal" id="hfinal" placeholder="ex. ofertas dentro del periodo 1S 2020" required="required" />
+                                            	<input readonly class="form-control"  name="hfinal" id="hfinal" placeholder="8:00 pm"  required="required" />
+										
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Dias de asistencia<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input readonly class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
 										
                                             </div>
                                         </div>
@@ -440,62 +449,19 @@
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                    <button type='submit' class="btn btn-primary">Guardar</button>
-                                                    <button type='reset' class="btn btn-success">Cancelar</button>
+                                                    <button type='submit' class="btn btn-primary" disabled>Guardar</button>
+                                                    <button type='reset' class="btn btn-success" disabled>Cancelar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                        </div>
+                        	</div>
                         
-                        <div class="clearfix"></div>
+                        	<div class="clearfix"></div>
                         
-                        <div class="col-md-12 col-sm-12 ">
-						<div class="x_panel">
-							<div class="x_title">
-								<h2> Detalles </h2>
-								
-								<div class="clearfix"></div>
-							</div>
-							<div class="x_content">
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="card-box table-responsive">
-											
-										
-											<table id="datatable-buttons" class="table table-striped table-bordered dataTable" style="width:100%">
-												<thead>
-													<tr>
-														<th>Nombre de Oferta</th>
-														<th>Periodo</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Acciones</th>
-													</tr>
-												</thead>
-
-
-
-												<tfoot>
-													<tr>
-														<th>Nombre de Oferta</th>
-														<th>Periodo</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Acciones</th>
-													</tr>
-												</tfoot>
-											</table>
-
-
-										</div>
-									</div>
-								</div>
-							</div>
+                       
 						</div>
-					</div>
-					</div>
                     </div>
                 </div>
             </div>

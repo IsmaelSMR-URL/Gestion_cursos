@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Gentelella</title>
+<title> Gestion de cursos|Capacitacion </title>
 
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -269,7 +269,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3> Gestion de Ofertas </h3>
+							<h3> Gestion de Capacitaciones </h3>
 						</div>
 
 						<div class="title_right">
@@ -293,7 +293,7 @@
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2> Ofertas Registradas </h2>
+								<h2> Capacitaciones Registradas </h2>
 								
 								<div class="clearfix"></div>
 							</div>
@@ -303,19 +303,17 @@
 										<div class="card-box table-responsive">
 											<div class="text-muted font-13 col-md-12"
 												style="text-align: right;">
-												<a href="frm_addOfertaEnc.jsp"> <i class="fa fa-2x fa-plus-square" title="Nueva Oferta"></i></a>
+												<a href="frm_addCapacitacion.jsp"> <i class="fa fa-2x fa-plus-square" title="Nueva Facultad"></i></a>
 												<br></br>
 											</div>
 										
 											<table id="datatable-buttons"
-												class="table table-striped table-bordered"
+												class="table table-striped table-bordered datatable-fixed-header"
 												style="width: 100%">
 												<thead>
 													<tr>
-														<th>Nombre de Oferta</th>
-														<th>Periodo</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
+														<th>Nombre de capacitacion</th> 
+														<th> Modalidad </th>
 														<th>Acciones</th>
 													</tr>
 												</thead>
@@ -326,30 +324,22 @@
 													for (int i = 0; i < 20; i++) {
 													%>
 													<tr>
-														<td>Nombre de Oferta</td>
-														<td>Periodo</td>
-														<td>Fecha Inicial</td>
-														<td>Fecha Final</td>
+														<td>Tiger Nixon</td>
+														<td> Modalidad</td>
 														<td>
-															<a href="frm_modOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
-															<a href="frm_vwOfertaEnc.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+															<a href="frm_modCapacitacion.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
+															<a href="frm_vwCapacitacion.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
+															<a href="frm_delCapacitacion.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
 														</td>
 													</tr>
 													<%
 													}
 													%>
+
+
+
 												</tbody>
 
-												<tfoot>
-													<tr>
-														<th>Nombre de Oferta</th>
-														<th>Periodo</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Acciones</th>
-													</tr>
-												</tfoot>
 											</table>
 
 
