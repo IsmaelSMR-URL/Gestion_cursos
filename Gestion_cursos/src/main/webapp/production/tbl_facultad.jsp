@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +70,7 @@
 										<li><a href="tbl_rol.jsp">Rol</a></li>
 										<li><a href="tbl_opciones.jsp">Opciones</a></li>
 										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
-										<li><a href="tbl_RolOpciones">Asignar opciones a los roles</a></li>
+										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
 									</ul>
 								</li>
 								
@@ -77,7 +79,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_facultad.jsp">Facultad</a></li>
 										<li><a href="tbl_departamento.jsp">Departamento</a></li>
-										<li><a href="form_validation.html">Carrera</a></li>
+										<li><a href="tbl_carrera.jsp">Carrera</a></li>
 									</ul>
 								</li>
 									
@@ -95,7 +97,7 @@
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="tbl_inscripcion.jsp">Gestion de Inscripciones</a></li>
-										<li><a href="frm_addInscripcion.jsp">Formulario de Inscripcion</a></li>
+										<li><a href="frm_addInscripcion.jsp">Inscripcion Docente</a></li>
 									</ul>
 								</li>
 								<li><a><i class="fa fa-file-o"></i> Reportes Parametrizados<span class="fa fa-chevron-down"></span></a>
@@ -109,8 +111,8 @@
 								<li><a><i class="fa fa-clone"></i>Evaluacion <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="fixed_sidebar.html">Escalas de Evaluacion</a></li>
-										<li><a href="fixed_footer.html">Evaluar </a></li>
+										<li><a href="tbl_EscalaCalificacion.jsp">Escalas de Evaluacion</a></li>
+										<li><a href="tbl_evaluar.jsp">Evaluar </a></li>
 									</ul>
 								</li>
 							</ul>
@@ -120,14 +122,7 @@
 					</div>
 					<!-- /sidebar menu -->
 
-					<!-- /menu footer buttons -->
-					<div class="sidebar-footer hidden-small">
-						<a data-toggle="tooltip" data-placement="top" title="Logout"
-							href="login.html"> <span class="glyphicon glyphicon-off"
-							aria-hidden="true"></span>
-						</a>
-					</div>
-					<!-- /menu footer buttons -->
+					
 				</div>
 			</div>
 
@@ -140,7 +135,7 @@
 					<nav class="nav navbar-nav">
 						<ul class=" navbar-right">
 							<li>
-								<a data-toggle="tooltip" data-placement="top" title="Logout"
+								<a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión"
 								href="login.html"> <span class="glyphicon glyphicon-off fa-2x"
 								aria-hidden="true"></span>
 								</a>
@@ -194,9 +189,15 @@
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered datatable-fixed-header"
 												style="width: 100%">
+												<%
+												ArrayList<Facultad> listaFacultad = new ArrayList<Facultad>();
+												Dt_Facultad dtu = new Dt_Facultad();
+												listaFacultad = dtu.listaFacActivos();
+												%>
 												<thead>
 													<tr>
 														<th>Nombre de facultad</th>
+														<th>Estado</th>
 														<th>Acciones</th>
 													</tr>
 												</thead>
@@ -204,14 +205,21 @@
 
 												<tbody>
 													<%
-													for (int i = 0; i < 20; i++) {
+													for (Facultad tf : listaFacultad) {
+														String estado = "";
+														if (tf.getEstado() != 3) {
+															estado = "Activa";
+														} else {
+															estado = "Modificada";
+														}
 													%>
 													<tr>
-														<td>Tiger Nixon</td>
+														<td><%=tf.getNombre_facultad() %></td>
+														<td><%=estado %></td>
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Facultad"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Facultad"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Facultad"></i></a>
+															<a href="frm_modFacultad.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Facultad"></i></a> 
+															<a href="frm_vwFacultad.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Facultad"></i></a> 
+															<a href="frm_delFacultad.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Facultad"></i></a>
 														</td>
 													</tr>
 													<%
@@ -221,7 +229,13 @@
 
 
 												</tbody>
-
+												<tfoot>
+													<tr>
+														<th>Nombre de facultad</th>
+														<th>Estado</th>
+														<th>Acciones</th>
+													</tr>
+												</tfoot>
 											</table>
 
 
