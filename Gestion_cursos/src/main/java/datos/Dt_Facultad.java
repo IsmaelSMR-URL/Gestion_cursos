@@ -10,14 +10,14 @@ import entidades.Facultad;
 public class Dt_Facultad {
 	poolConexion pc = poolConexion.getInstance(); 
 	Connection c = null;
-	private ResultSet rsRol = null;
+	private ResultSet rsFacultad = null;
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
 	
-	public void llena_rsRol(Connection c){
+	public void llena_rsFacultad(Connection c){
 		try{
 			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.facultad WHERE estado<>3;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
-			rsRol = ps.executeQuery();
+			rsFacultad = ps.executeQuery();
 		}
 		catch (Exception e){
 			System.out.println("DATOS: ERROR EN LISTAR ROLES "+ e.getMessage());
@@ -63,5 +63,40 @@ public class Dt_Facultad {
 			
 		}
 		return listFac;
+	}
+	
+	public boolean addFacultad(Facultad fc){
+		boolean guardado = false;
+		
+		try{
+			c = poolConexion.getConnection();
+			this.llena_rsFacultad(c);
+			this.rsFacultad.moveToInsertRow();
+			rsFacultad.updateString("nombre_facultad", fc.getNombre_facultad());
+			rsFacultad.updateInt("estado", 1);
+			rsFacultad.insertRow();
+			rsFacultad.moveToCurrentRow();
+			guardado = true;
+		}
+		catch (Exception e) {
+			System.err.println("ERROR AL GUARDAR facultad: "+e.getMessage());
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				if(rsFacultad != null){
+					rsFacultad.close();
+				}
+				if(c != null){
+					poolConexion.closeConnection(c);
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return guardado;
 	}
 }

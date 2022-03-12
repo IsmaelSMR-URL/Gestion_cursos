@@ -151,14 +151,12 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
+                                    <form action="../Sl_Facultad" method="POST" novalidate>
+                                    <input type="hidden" value="1" name="opcion" id="opcion"/>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de la facultad: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="ex. John f. Kennedy" required="required" />
+                                            	<input class="form-control"  name="nFacultad" id="nFacultad" placeholder="Facultad..." required="required" />
 										
                                             </div>
                                         </div>
