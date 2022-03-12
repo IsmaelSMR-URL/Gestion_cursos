@@ -7,9 +7,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Gentelella</title>
+<title> Gestion de cursos|Capacitacion </title>
 
 <!-- Bootstrap -->
+<link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 <link href="../vendors/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- Font Awesome -->
@@ -268,7 +269,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>Gestion de Ofertas</h3>
+							<h3> Gestion de Capacitaciones </h3>
 						</div>
 
 						<div class="title_right">
@@ -289,172 +290,11 @@
 					<div class="clearfix"></div>
 
 
-
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Ingrese un Encabezado para su oferta </h2>
-                                    
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Oferta <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020"  readonly/>
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" readonly/>
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020" readonly />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Período <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020" readonly />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" readonly />
-										
-                                            </div>
-                                        </div>
-                                        <div class="ln_solid">
-                                            <div class="form-group">
-                                                <div class="col-md-6 offset-md-3">
-                                                	<button type='submit' class="btn btn-primary" disabled>Guardar</button>
-                                                    <button type='reset' class="btn btn-success" disabled>Cancelar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-						
-						<div class="x_panel">
-                                <div class="x_title">
-                                    <h2>Datos para los detalles de su oferta </h2>
-                                    
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
-                                       <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<select id="select" class="form-control">
-													<option value="net">...Seleccione</option>
-													<option value="press">Curso Induccion a la docencia</option>
-													<option value="net">Curso del Uso del EVA</option>
-													<option value="mouth">Curso del uso de las reglas APA</option>
-												</select>
-                                            </div>
-                                        </div>
-                                        
-                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Facilitador:  <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control">
-													<option value="net">...Seleccione</option>
-													<option value="net">Juan Pablo</option>
-													<option value="press">Maria Jose</option>
-												</select>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finiciod" id="finiciod"  required="required" />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinald" id="ffinald"  required="required" />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Inicio <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="hinicio" id="hinicio" placeholder="6:00 pm"  required="required" />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Final <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="8:00 pm"  required="required" />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Dias de asistencia<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
-										
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group row">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control">
-													<option value="net">Mantener Privado</option>
-													<option value="press">Hacer Público</option>
-													
-												</select>
-                                            </div>
-                                        </div>  
-                                        <div class="ln_solid">
-                                            <div class="form-group">
-                                                <div class="col-md-6 offset-md-3">
-                                                    <a href="index.html" target="blank" class="btn btn-primary">Guardar</a>
-                                                    <button type='reset' class="btn btn-success">Cancelar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                        </div>
-                        
-                        <div class="clearfix"></div>
-						
-						<div class="x_panel">
 							<div class="x_title">
-								<h2>Ofertas Registradas</h2>
-
+								<h2> Capacitaciones Registradas </h2>
+								
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
@@ -463,60 +303,43 @@
 										<div class="card-box table-responsive">
 											<div class="text-muted font-13 col-md-12"
 												style="text-align: right;">
-												<a href="frm_addOfertaEnc.jsp"> <i
-													class="fa fa-2x fa-plus-square" title="Nueva Oferta"></i></a> <br></br>
+												<a href="frm_addCapacitacion.jsp"> <i class="fa fa-2x fa-plus-square" title="Nueva Facultad"></i></a>
+												<br></br>
 											</div>
-
-											<table id="datatable-buttons" class="table table-striped table-bordered dataTable" style="width:100%">
+										
+											<table id="datatable-buttons"
+												class="table table-striped table-bordered datatable-fixed-header"
+												style="width: 100%">
 												<thead>
 													<tr>
-														<th>Capacitacion</th>
-														<th>Facilitador</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Hora de Inicio</th>
-														<th>Hora de Finalización</th>
-														<th>Días de Asistencia</th>
+														<th>Nombre de capacitacion</th> 
+														<th> Modalidad </th>
 														<th>Acciones</th>
 													</tr>
 												</thead>
 
+
 												<tbody>
-													
 													<%
 													for (int i = 0; i < 20; i++) {
 													%>
 													<tr>
-														<td>Capacitacion</td>
-														<td>Facilitador</td>
-														<td>Fecha Inicial</td>
-														<td>Fecha Final</td>
-														<td>Hora de Inicio</td>
-														<td>Hora de Finalización</td>
-														<td>Días de Asistencia</td>
+														<td>Tiger Nixon</td>
+														<td> Modalidad</td>
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+															<a href="frm_modCapacitacion.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
+															<a href="frm_vwCapacitacion.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
+															<a href="frm_delCapacitacion.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
 														</td>
 													</tr>
 													<%
 													}
-													%> 
+													%>
+
+
+
 												</tbody>
 
-												<tfoot>
-													<tr>
-														<th>Capacitacion</th>
-														<th>Facilitador</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Hora de Inicio</th>
-														<th>Hora de Finalización</th>
-														<th>Días de Asistencia</th>
-														<th>Acciones</th>
-													</tr>
-												</tfoot>
 											</table>
 
 
@@ -577,7 +400,7 @@
 	<script src="../vendors/jszip/dist/jszip.min.js"></script>
 	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
 	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
-<script src="../vendors/select2/dist/js/select2.min.js"></script>
+
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
 

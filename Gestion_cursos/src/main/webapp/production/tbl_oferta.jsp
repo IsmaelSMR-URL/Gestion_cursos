@@ -331,9 +331,9 @@
 														<td>Fecha Inicial</td>
 														<td>Fecha Final</td>
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+															<a href="frm_modOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar capacitacion ofertada"></i></a> 
+															<a href="frm_vwOfertaEnc.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar capacitacion ofertada"></i></a> 
+															<a href="frm_delOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar capacitacion ofertada"></i></a>
 														</td>
 													</tr>
 													<%

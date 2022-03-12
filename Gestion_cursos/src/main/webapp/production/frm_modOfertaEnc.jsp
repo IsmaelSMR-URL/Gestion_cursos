@@ -20,6 +20,7 @@
 <!-- iCheck -->
 <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 <!-- Datatables -->
+<link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
 
 <link
 	href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
@@ -293,7 +294,7 @@
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Ingrese un Encabezado para su oferta </h2>
+                                    <h2>Modifique el Encabezado de su oferta</h2>
                                     
                                     <div class="clearfix"></div>
                                 </div>
@@ -305,7 +306,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Oferta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020"  readonly/>
+                                            	<input class="form-control"  name="name" placeholder="Primer Semestre 2020"  />
 										
                                             </div>
                                         </div>
@@ -313,7 +314,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" readonly/>
+                                            	<input class="form-control" type="date" name="finicio" id="finicio" />
 										
                                             </div>
                                         </div>
@@ -321,7 +322,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020" readonly />
+                                            	<input class="form-control" type="date" name="ffinal" id="ffinal"   />
 										
                                             </div>
                                         </div>
@@ -329,7 +330,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Período <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020" readonly />
+                                            	<input class="form-control" name="periodo" id="periodo" placeholder="1S2020"  />
 										
                                             </div>
                                         </div>
@@ -337,15 +338,16 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" readonly />
+                                            	<input class="form-control"  name="descr" id="descr" placeholder="Ofertas dentro del periodo 1S 2020" />
 										
                                             </div>
                                         </div>
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                	<button type='submit' class="btn btn-primary" disabled>Guardar</button>
-                                                    <button type='reset' class="btn btn-success" disabled>Cancelar</button>
+                                                
+                                                	<a href="" target="blank" class="btn btn-primary">Guardar</a>
+                                                    <button type='reset' class="btn btn-success">Cancelar</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -364,14 +366,14 @@
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
-                                       <div class="field item form-group">
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="select" class="form-control">
+                                            	<select id="heard" class="form-control" disabled>
 													<option value="net">...Seleccione</option>
-													<option value="press">Curso Induccion a la docencia</option>
-													<option value="net">Curso del Uso del EVA</option>
-													<option value="mouth">Curso del uso de las reglas APA</option>
+													<option value="press">Press</option>
+													<option value="net">Internet</option>
+													<option value="mouth">Word of mouth</option>
 												</select>
                                             </div>
                                         </div>
@@ -379,7 +381,7 @@
                                          <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Facilitador:  <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control">
+                                            	<select id="heard" class="form-control" disabled>
 													<option value="net">...Seleccione</option>
 													<option value="net">Juan Pablo</option>
 													<option value="press">Maria Jose</option>
@@ -390,7 +392,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finiciod" id="finiciod"  required="required" />
+                                            	<input readonly class="form-control" type="date" name="finiciod" id="finiciod"  required="required" />
 										
                                             </div>
                                         </div>
@@ -398,7 +400,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinald" id="ffinald"  required="required" />
+                                            	<input readonly class="form-control" type="date" name="ffinald" id="ffinald"  required="required" />
 										
                                             </div>
                                         </div>
@@ -406,7 +408,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="hinicio" id="hinicio" placeholder="6:00 pm"  required="required" />
+                                            	<input readonly class="form-control" name="hinicio" id="hinicio" placeholder="6:00 pm"  required="required" />
 										
                                             </div>
                                         </div>
@@ -414,7 +416,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Hora Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="8:00 pm"  required="required" />
+                                            	<input readonly class="form-control"  name="hfinal" id="hfinal" placeholder="8:00 pm"  required="required" />
 										
                                             </div>
                                         </div>
@@ -422,34 +424,32 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Dias de asistencia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
+                                            	<input readonly class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
 										
                                             </div>
                                         </div>
                                         
-                                        <div class="form-group row">
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control">
+                                            	<select id="heard" class="form-control" disabled>
 													<option value="net">Mantener Privado</option>
 													<option value="press">Hacer Público</option>
 													
 												</select>
                                             </div>
-                                        </div>  
+                                        </div> 
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                    <a href="index.html" target="blank" class="btn btn-primary">Guardar</a>
-                                                    <button type='reset' class="btn btn-success">Cancelar</button>
+                                                    <button type='submit' class="btn btn-primary" disabled>Guardar</button>
+                                                    <button type='reset' class="btn btn-success" disabled>Cancelar</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                        </div>
-                        
-                        <div class="clearfix"></div>
+                        	</div>
 						
 						<div class="x_panel">
 							<div class="x_title">
@@ -495,14 +495,14 @@
 														<td>Hora de Finalización</td>
 														<td>Días de Asistencia</td>
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+															<a href="frm_modOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar capacitacion ofertada"></i></a> 
+															<a href="frm_vwOfertaDet.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar capacitacion ofertada"></i></a> 
+															<a href="frm_delOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar capacitacion ofertada"></i></a>
 														</td>
 													</tr>
 													<%
 													}
-													%> 
+													%>
 												</tbody>
 
 												<tfoot>
@@ -577,9 +577,9 @@
 	<script src="../vendors/jszip/dist/jszip.min.js"></script>
 	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
 	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
-<script src="../vendors/select2/dist/js/select2.min.js"></script>
+
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
-
+	<script src="../vendors/select2/dist/js/select2.min.js"></script>
 </body>
 </html>
