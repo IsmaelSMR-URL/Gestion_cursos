@@ -211,7 +211,7 @@
                         </tr>
                       </thead>
                       <tbody>                      
-					 <%
+					 <%-- <%
                       for(Tbl_escalaCalificacion to :listaEscalaCalificacion){
                       		String estado = "";
                       		if(tu.getEstado()!=3){
@@ -234,7 +234,7 @@
                         </tr>
                         <%
                       	}
-                        %> --%>
+                        %> --%> --%>
                       </tbody>
                       <tfoot>
                         <tr>
