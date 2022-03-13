@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Gentelella</title>
+<title>Gestion de Cursos | Oferta</title>
 
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -198,6 +200,13 @@
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
+												
+												<%
+												ArrayList<Oferta> listaOferta = new ArrayList<Oferta>();
+												Dt_Oferta dto = new Dt_Oferta();
+												listaOferta = dto.listaOfActivos();
+												%>
+												
 												<thead>
 													<tr>
 														<th>Nombre de Oferta</th>
@@ -211,13 +220,14 @@
 
 												<tbody>
 													<%
-													for (int i = 0; i < 20; i++) {
+													for (Oferta to : listaOferta) {
+														
 													%>
 													<tr>
-														<td>Nombre de Oferta</td>
-														<td>Periodo</td>
-														<td>Fecha Inicial</td>
-														<td>Fecha Final</td>
+														<td><%=to.getNombre().toString() %></td>
+														<td><%=to.getPeriodo()%></td>
+														<td><%=to.getFecha_inicial() %></td>
+														<td><%=to.getFecha_final()%></td>
 														<td>
 															<a href="frm_modOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar capacitacion ofertada"></i></a> 
 															<a href="frm_vwOfertaEnc.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar capacitacion ofertada"></i></a> 

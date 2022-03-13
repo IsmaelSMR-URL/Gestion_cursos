@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,6 @@
 <!-- iCheck -->
 <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 <!-- Datatables -->
-<link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
 
 <link
 	href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
@@ -40,6 +41,12 @@
 
 <!-- Custom Theme Style -->
 <link href="../build/css/custom.min.css" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+ <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+<!-- bootstrap-datetimepicker -->
+<link href="../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+
 </head>
 
 <body class="nav-md">
@@ -116,12 +123,7 @@
 								</li>
 							</ul>
 						</div>
-						
-
 					</div>
-					<!-- /sidebar menu -->
-
-					
 				</div>
 			</div>
 
@@ -152,12 +154,6 @@
 						<div class="title_left">
 							<h3>Gestion de Ofertas</h3>
 						</div>
-
-						<div class="title_right">
-							<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-								
-							</div>
-						</div>
 					</div>
 
 
@@ -173,15 +169,11 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="../Sl_OfertaEnc" method="post" novalidate>
-                                    <input type="hidden" value="1" name="opcion" id="opcion"/>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
+                                    <form class="" action="" method="post" novalidate>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Oferta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" id="nombre" name="nombre" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020"  readonly/>
 										
                                             </div>
                                         </div>
@@ -189,7 +181,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finicio" id="finicio" />
+                                            	<input class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" readonly/>
 										
                                             </div>
                                         </div>
@@ -197,7 +189,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinal" id="ffinal"   />
+                                            	<input class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020" readonly />
 										
                                             </div>
                                         </div>
@@ -205,7 +197,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Período <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="periodo" id="periodo" placeholder="1S2020"  />
+                                            	<input class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020" readonly />
 										
                                             </div>
                                         </div>
@@ -213,16 +205,14 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="descr" id="descr" placeholder="Ofertas dentro del periodo 1S 2020" />
+                                            	<input class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" readonly />
 										
                                             </div>
                                         </div>
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                
-                                                	<button  target="blank" class="btn btn-primary">Guardar</button>
-                                                    <button type='reset' class="btn btn-success">Cancelar</button>
+                                                	
                                                 </div>
                                             </div>
                                         </div>
@@ -230,13 +220,114 @@
                                 </div>
                             </div>
 						
-						
+						<div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Datos para los detalles de su oferta </h2>
+                                    
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <form class="" action="" method="post" novalidate>
+<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
+<!--                                         </p> -->
+<!--                                         <span class="section">Personal Info</span> -->
+                                       <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<select id="select" class="form-control js-example-basic-single">
+													<option value="net">...Seleccione</option>
+													<option value="press">Curso Induccion a la docencia</option>
+													<option value="net">Curso del Uso del EVA</option>
+													<option value="mouth">Curso del uso de las reglas APA</option>
+												</select>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Facilitador:  <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<select id="heard" class="form-control js-example-basic-single">
+													<option value="net">...Seleccione</option>
+													<option value="net">Juan Pablo</option>
+													<option value="press">Maria Jose</option>
+												</select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control" type="date" name="finiciod" id="finiciod"  required="required" />
+										
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control" type="date" name="ffinald" id="ffinald"  required="required" />
+										
+                                            </div>
+                                        </div>
+
+									<div class="field item form-group">
+										<label class="col-form-label col-md-3 col-sm-3  label-align">Hora Inicial <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6">
+											<input class="form-control timepick" name="hfinal"
+												id="hinicial" placeholder="8:00 pm" required="required" />
+
+										</div>
+									</div>
+
+									<div class="field item form-group">
+										<label class="col-form-label col-md-3 col-sm-3  label-align">Hora
+											Final <span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6">
+											<input class="form-control timepick" name="hfinal"
+												id="hfinal" placeholder="8:00 pm" required="required" />
+
+										</div>
+									</div>
+
+									<div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Dias de asistencia<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
+										
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<select class="form-control js-example-basic-single" name="cbxUser" id="cbxUser" required="required">
+												
+													  <option value="1">Mantener Privado</option>
+													  <option value="2">Hacer Publico</option>
+												  
+												 
+												</select>
+                                            </div>
+                                        </div>  
+                                        <div class="ln_solid">
+                                            <div class="form-group">
+                                                <div class="col-md-6 offset-md-3">
+                                                    <a href="index.html" target="blank" class="btn btn-primary">Guardar</a>
+                                                    <button type='reset' class="btn btn-success">Cancelar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
                         
-                        	<div class="clearfix"></div>
+                        <div class="clearfix"></div>
 						
 						<div class="x_panel">
 							<div class="x_title">
-								<h2>Detalles de la Oferta</h2>
+								<h2>Ofertas Registradas</h2>
 
 								<div class="clearfix"></div>
 							</div>
@@ -246,10 +337,18 @@
 										<div class="card-box table-responsive">
 											<div class="text-muted font-13 col-md-12"
 												style="text-align: right;">
-												
+												<a href="frm_addOfertaDet.jsp"> <i
+													class="fa fa-2x fa-plus-square" title="Nueva Oferta"></i></a> <br></br>
 											</div>
 
-											<table id="datatable-buttons" class="table table-striped table-bordered dataTable" style="width:100%">
+											<table id="datatable-buttons" class="table table-striped table-bordered dataTable facultad" style="width:100%">
+												<%
+												ArrayList<Oferta_Detalle> listaOferta = new ArrayList<Oferta_Detalle>();
+												Dt_Oferta_Det dtof = new Dt_Oferta_Det();
+												Dt_Oferta dto = new Dt_Oferta();
+												listaOferta = dtof.listaOD_id(dto.getid_oferta());
+												%>
+												
 												<thead>
 													<tr>
 														<th>Capacitacion</th>
@@ -259,13 +358,32 @@
 														<th>Hora de Inicio</th>
 														<th>Hora de Finalización</th>
 														<th>Días de Asistencia</th>
-														
+														<th>Acciones</th>
 													</tr>
 												</thead>
 
 												<tbody>
 													
-													
+													<%
+													for (Oferta_Detalle to : listaOferta) {
+													%>
+													<tr>
+														<td><%=to.getId_capacitacion()%></td>
+														<td>Facilitador</td>
+														<td>Fecha Inicial</td>
+														<td>Fecha Final</td>
+														<td>Hora de Inicio</td>
+														<td>Hora de Finalización</td>
+														<td>Días de Asistencia</td>
+														<td>
+															<a href="frm_modOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
+															<a href="frm_vwOfertaDet.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
+															<a href="frm_delOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Gasto"></i></a>
+														</td>
+													</tr>
+													<%
+													}
+													%> 
 												</tbody>
 
 												<tfoot>
@@ -277,7 +395,7 @@
 														<th>Hora de Inicio</th>
 														<th>Hora de Finalización</th>
 														<th>Días de Asistencia</th>
-														
+														<th>Acciones</th>
 													</tr>
 												</tfoot>
 											</table>
@@ -304,7 +422,7 @@
 			<!-- /footer content -->
 		</div>
 	</div>
-
+    
 	<!-- jQuery -->
 	<script src="../vendors/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap -->
@@ -339,9 +457,67 @@
 	<script src="../vendors/jszip/dist/jszip.min.js"></script>
 	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
 	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+	
+	<!-- bootstrap-datetimepicker -->    
+    <script src="../vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script  type="text/javascript">
+	
+	 $(document).ready( function{
+			
+			$('#datatable-buttons').DataTable( {
+			    responsive: true
+			} );
+			
 
+			
+			$('.js-example-basic-single').select2();
+		});
+ 		
+		function hideshow(){
+			var password = document.getElementById("password1");
+			var slash = document.getElementById("slash");
+			var eye = document.getElementById("eye");
+			
+			if(password.type === 'password'){
+				password.type = "text";
+				slash.style.display = "block";
+				eye.style.display = "none";
+			}
+			else{
+				password.type = "password";
+				slash.style.display = "none";
+				eye.style.display = "block";
+			}
+		}
+	</script>
+	<script src="../vendors/select2/dist/js/select2.min.js"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
-	<script src="../vendors/select2/dist/js/select2.min.js"></script>
+ 	
+
+    <script>
+        // initialize a validator instance from the "FormValidator" constructor.
+        // A "<form>" element is optionally passed as an argument, but is not a must
+        var validator = new FormValidator({
+            "events": ['blur', 'input', 'change']
+        }, document.forms[0]);
+        // on form "submit" event
+        document.forms[0].onsubmit = function(e) {
+            var submit = true,
+                validatorResult = validator.checkAll(this);
+            console.log(validatorResult);
+            return !!validatorResult.valid;
+        };
+        // on form "reset" event
+        document.forms[0].onreset = function(e) {
+            validator.reset();
+        };
+        // stuff related ONLY for this demo page:
+        $('.toggleValidationTooltips').change(function() {
+            validator.settings.alerts = !this.checked;
+            if (this.checked)
+                $('form .alert').remove();
+        }).prop('checked', false);
+    </script>
 </body>
 </html>
