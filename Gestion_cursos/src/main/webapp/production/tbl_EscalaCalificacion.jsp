@@ -144,7 +144,7 @@
 					<nav class="nav navbar-nav">
 						<ul class=" navbar-right">
 							<li>
-								<a data-toggle="tooltip" data-placement="top" title="Salir"
+								<a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión"
 								href="login.html"> <span class="glyphicon glyphicon-off fa-2x"
 								aria-hidden="true"></span>
 								</a>
@@ -161,7 +161,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Escala de Calificaciones</h3>
+                <h3>Gestion de escala de Calificaciones</h3>
               </div>
 
               <div class="title_right">
@@ -196,11 +196,11 @@
 							</div>
 
                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
-                      <%-- <%
-                      	ArrayList<Tbl_escalaCalificacion > listaEscalaCalificacion = new ArrayList<Tbl_escalaCalificacion>();
+                      <%
+                      	ArrayList<EscalaCalificacion > listaEscalaCalificacion = new ArrayList<EscalaCalificacion>();
                       	Dt_escalaCalificacion dec = new Dt_escalaCalificacion();
                       	listaEscalaCalificacion = dec.listaUserActivos();
-	                  %> --%>
+	                  %>
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -211,30 +211,30 @@
                         </tr>
                       </thead>
                       <tbody>                      
-					 <%-- <%
-                      for(Tbl_escalaCalificacion to :listaEscalaCalificacion){
+					 <%
+                      for(Tbl_escalaCalificacion tec :listaEscalaCalificacion){
                       		String estado = "";
                       		if(tu.getEstado()!=3){
-                      			estado = "ACTIVO";
+                      			estado = "Activo";
                       		}
                       		else{
-                      			estado = "INACTIVO";
+                      			estado = "Modificada";
                       		}*/
                       %>
                         <tr>
-                          <td><%=tu.getId_EscalaCalificacion() %></td>
-                          td><%=tu.getCalificacion() %></td>
-                          <td><%=tu.getDescripcion() %></td>
+                          <td><%=tec.getId_EscalaCalificacion() %></td>
+                          <td><%=tec.getCalificacion() %></td>
+                          <td><%=tec.getDescripcion() %></td>
                           <td><%=estado %></td>
                           <td>
-							<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar Facultad"></i></a> 
-							<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Facultad"></i></a> 
-							<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Facultad"></i></a>
+							<a href="frm_modEscalaCalificacion.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Calificacion"></i></a> 
+							<a href="frm_vwEscalaCalificacion.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Calificacion"></i></a> 
+							<a href="frm_delEscalaCalificacion.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Calificacion"></i></a>
 						  </td>
                         </tr>
                         <%
                       	}
-                        %> --%>
+                        %>
                       </tbody>
                       <tfoot>
                         <tr>
