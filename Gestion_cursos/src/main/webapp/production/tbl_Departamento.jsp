@@ -1,8 +1,3 @@
-<%@page import="entidades.Modalidad"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="entidades.Modalidad, datos.*, java.util.*;"%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Gentelella</title>
+<title>DataTables | Me quiero morir</title>
 
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -61,13 +56,17 @@
 
 					<!-- menu profile quick info -->
 					<div class="profile clearfix">
-						
+						<div class="profile_pic">
+							
+						</div>
+						<div class="profile_info">
+							
+						</div>
 					</div>
 					<!-- /menu profile quick info -->
 
 					<br />
 
-					<!-- sidebar menu -->
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
 						<div class="menu_section">
@@ -129,8 +128,12 @@
 
 					</div>
 					<!-- /sidebar menu -->
-
 					
+					<!-- /menu footer buttons -->
+					<div class="sidebar-footer hidden-small">
+						
+					</div>
+					<!-- /menu footer buttons -->
 				</div>
 			</div>
 
@@ -161,7 +164,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3> Gestion de Modalidad </h3>
+							<h3> Gestion de Departamentos </h3>
 						</div>
 
 						<div class="title_right">
@@ -181,7 +184,7 @@
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2> Modalidades Registradas </h2>
+								<h2> Departamentos Registrados </h2>
 								
 								<div class="clearfix"></div>
 							</div>
@@ -191,60 +194,37 @@
 										<div class="card-box table-responsive">
 											<div class="text-muted font-13 col-md-12"
 												style="text-align: right;">
-												<a href="frm_addModalidad.jsp"> <i class="fa fa-2x fa-plus-square" title="Nuevo Usuario"></i></a>
+												<a href="frm_addDepartamento.jsp"> <i class="fa fa-2x fa-plus-square" title="Nuevo Departamento"></i></a>
 												<br></br>
 											</div>
 										
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
-												
-												<%
-											
-												ArrayList<Modalidad > listaMod = new ArrayList<Modalidad>();
-												Dt_Modalidad dtu = new Dt_Modalidad ();
-												listaMod = dtu.listaModActivos();
-												%>
 												<thead>
 													<tr>
-														
-															<th>Id </th>
-														<th>Nombre </th>
-														<th>Certicada</th>
-														<th>Descripcion</th>
+														<th>Departamento</th>
 														<th>Estado</th>
-													    <th>Acciones</th>
+														<th>Acciones</th>
 													</tr>
 												</thead>
 
 
 												<tbody>
 													<%
-													
-													for (Modalidad tMod : listaMod) {
-														String estado = "";
-														if (tMod.getEstado() != 3) {
-															estado = "Activa";
-														} else {
-															estado = "Modificada";
-														}
+													for (int i = 0; i < 5; i++) {
 													%>
 													<tr>
-													
-													  <td><%=tMod.getId_modalidad()%></td>
-													  <td><%=tMod.getNombre_modalidad()%></td>
-													  <td><%= tMod.getCertificada() %></td>
-													  <td><%= tMod.getDescripcion() %></td>
-													  <td><%=estado %></td>
 														
-											
-														
+														<td>Departamento</td>
+														<td>Estado</td>
 														
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Usuario"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Usuario"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Usuario"></i></a>
+															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Departamento"></i></a> 
+															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Departamento"></i></a> 
+															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Departamento"></i></a>
 														</td>
+														
 													</tr>
 													<%
 													}
@@ -253,11 +233,11 @@
 
 												<tfoot>
 													<tr>
-													     <th>Id </th>
-														<th>Nombre</th>
-														<th>Certificada Real</th>
-														<th>Descripcion</th>
+													
+														<th>Departamento</th>
+														<th>Estado</th>
 														<th>Acciones</th>
+														
 													</tr>
 												</tfoot>
 											</table>
@@ -274,6 +254,7 @@
 
 			<!-- /page content -->
 
+			<!-- footer content -->
 			<!-- footer content -->
 			<footer>
 				<div class="pull-right">

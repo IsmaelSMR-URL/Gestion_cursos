@@ -1,8 +1,3 @@
-<%@page import="entidades.Modalidad"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="entidades.Modalidad, datos.*, java.util.*;"%>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +35,7 @@
 	href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
 	rel="stylesheet">
 <link
-	href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+	href="../vendors/datatables.net-scRoller-bs/css/scRoller.bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- Custom Theme Style -->
@@ -51,7 +46,7 @@
 	<div class="container body">
 		<div class="main_container">
 			<div class="col-md-3 left_col">
-				<div class="left_col scroll-view">
+				<div class="left_col scRoll-view">
 					<div class="navbar nav_title" style="border: 0;">
 						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
 							<span>Dpto. Educacion</span></a>
@@ -75,11 +70,11 @@
 								<li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_usuario.jsp">Usuario</a></li>
-										<li><a href="tbl_rol.jsp">Rol</a></li>
+										<li><a href="tbl_Rol.jsp">Rol</a></li>
+										<li><a href="tbl_Rol.jsp">Rol</a></li>
 										<li><a href="tbl_opciones.jsp">Opciones</a></li>
-										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
-										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
+										<li><a href="tbl_RolRol.jsp">Asignar Roles a Rol</a></li>
+										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los Roles</a></li>
 									</ul>
 								</li>
 								
@@ -157,11 +152,11 @@
 			<!-- /top navigation -->
 
 			<!-- page content -->
-			<div class="right_col" role="main">
+			<div class="right_col" Role="main">
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3> Gestion de Modalidad </h3>
+							<h3> Gestion de Rols </h3>
 						</div>
 
 						<div class="title_right">
@@ -181,7 +176,7 @@
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2> Modalidades Registradas </h2>
+								<h2> Rols Registrados </h2>
 								
 								<div class="clearfix"></div>
 							</div>
@@ -191,59 +186,39 @@
 										<div class="card-box table-responsive">
 											<div class="text-muted font-13 col-md-12"
 												style="text-align: right;">
-												<a href="frm_addModalidad.jsp"> <i class="fa fa-2x fa-plus-square" title="Nuevo Usuario"></i></a>
+												<a href="frm_addRol.jsp"> <i class="fa fa-2x fa-plus-square" title="Nuevo Rol"></i></a>
 												<br></br>
 											</div>
 										
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
-												
-												<%
-											
-												ArrayList<Modalidad > listaMod = new ArrayList<Modalidad>();
-												Dt_Modalidad dtu = new Dt_Modalidad ();
-												listaMod = dtu.listaModActivos();
-												%>
 												<thead>
 													<tr>
 														
-															<th>Id </th>
-														<th>Nombre </th>
-														<th>Certicada</th>
-														<th>Descripcion</th>
+														<th>Nombre del Rol</th>
+														<th>Descripción</th>
 														<th>Estado</th>
-													    <th>Acciones</th>
+														<th>Acciones</th>
 													</tr>
 												</thead>
 
 
 												<tbody>
 													<%
-													
-													for (Modalidad tMod : listaMod) {
-														String estado = "";
-														if (tMod.getEstado() != 3) {
-															estado = "Activa";
-														} else {
-															estado = "Modificada";
-														}
+													for (int i = 0; i < 5; i++) {
 													%>
 													<tr>
+														
+														<td>Nombre del Rol</td>
+														<td>Descripción</td>
+														<td>Estado</td>
 													
-													  <td><%=tMod.getId_modalidad()%></td>
-													  <td><%=tMod.getNombre_modalidad()%></td>
-													  <td><%= tMod.getCertificada() %></td>
-													  <td><%= tMod.getDescripcion() %></td>
-													  <td><%=estado %></td>
-														
-											
-														
 														
 														<td>
-															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Usuario"></i></a> 
-															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Usuario"></i></a> 
-															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Usuario"></i></a>
+															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Rol"></i></a> 
+															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Rol"></i></a> 
+															<a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar Rol"></i></a>
 														</td>
 													</tr>
 													<%
@@ -253,10 +228,9 @@
 
 												<tfoot>
 													<tr>
-													     <th>Id </th>
-														<th>Nombre</th>
-														<th>Certificada Real</th>
-														<th>Descripcion</th>
+														<th>Nombre del Rol</th>
+														<th>Descripción</th>
+														<th>Estado</th>
 														<th>Acciones</th>
 													</tr>
 												</tfoot>
@@ -315,7 +289,7 @@
 	<script
 		src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
 	<script
-		src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+		src="../vendors/datatables.net-scRoller/js/dataTables.scRoller.min.js"></script>
 	<script src="../vendors/jszip/dist/jszip.min.js"></script>
 	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
 	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
