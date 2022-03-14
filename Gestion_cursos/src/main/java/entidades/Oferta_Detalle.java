@@ -11,8 +11,10 @@ public class Oferta_Detalle {
 	private String dias; 
 	private int publico; 
 	private int id_oferta; 
-	private int id_capacitacion; 
+	private int id_capacitacion;
+	private String capacitacion;
 	private int id_facilitador;
+	private String facilitador;
 	
 	public int getId_oferta_detalle() {
 		return id_oferta_detalle;
@@ -73,6 +75,18 @@ public class Oferta_Detalle {
 	}
 	public void setId_facilitador(int id_facilitador) {
 		this.id_facilitador = id_facilitador;
+	}
+	public String getCapacitacion() {
+		return capacitacion;
+	}
+	public void setCapacitacion(String capacitacion) {
+		this.capacitacion = capacitacion;
+	}
+	public String getFacilitador() {
+		return facilitador;
+	}
+	public void setFacilitador(String facilitador) {
+		this.facilitador = facilitador;
 	}
 	
 	

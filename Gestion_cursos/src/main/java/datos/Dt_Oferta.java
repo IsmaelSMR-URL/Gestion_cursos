@@ -1,7 +1,6 @@
 package datos;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,11 +70,55 @@ public class Dt_Oferta {
 		return listFac;
 	}
 	
+	public Oferta getoferta(int id){
+		Oferta of = new Oferta(); //instanciamos a rol
+		try{
+			c = poolConexion.getConnection(); //obtenemos una conexion del pool
+			ps = c.prepareStatement("SELECT *  from gc_mcgofe.oferta where id_oferta = "+id, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			rs = ps.executeQuery();
+			rs.next();
+			
+			
+			of.setId_oferta(rs.getInt("id_oferta"));
+			of.setNombre(rs.getString("nombre"));
+			of.setDescripcion(rs.getString("descripcion"));
+			of.setPeriodo(rs.getString("periodo"));
+			of.setFecha_inicial(rs.getDate("fecha_inicial"));
+			of.setFecha_final(rs.getDate("fecha_final"));
+			of.setEstado(rs.getInt("estado"));
+			
+			
+		}
+		catch (Exception e){
+			System.out.println("DATOS: ERROR EN LISTAR Facultades: "+ e.getMessage());
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				if(rs != null){
+					rs.close();
+				}
+				if(ps != null){
+					ps.close();
+				}
+				if(c != null){
+					poolConexion.closeConnection(c);
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		return of;
+	}
+	
 	public int getid_oferta(){
 		int x = 0;
 		try{
 			c = poolConexion.getConnection(); //obtenemos una conexion del pool
-			ps = c.prepareStatement("SELECT id_oferta from gc_mc_gofe.oferta where estado != 3 Order by id_oferta DESC Limit 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ps = c.prepareStatement("SELECT id_oferta from gc_mcgofe.oferta where estado != 3 Order by id_oferta DESC Limit 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = ps.executeQuery();
 			rs.next();
 			

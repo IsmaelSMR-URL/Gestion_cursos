@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,9 +159,19 @@
 
 
 					<div class="clearfix"></div>
+					<%
+					ArrayList<Oferta_Detalle> listaOferta = new ArrayList<Oferta_Detalle>();
+					Oferta oferta = new Oferta();
+					
+					Dt_Oferta dto = new Dt_Oferta();
+					Dt_Oferta_Det dtod = new Dt_Oferta_Det();
+					
+					
+					int x = dto.getid_oferta();
 
-
-
+					oferta = dto.getoferta(x);
+					listaOferta = dtod.listaOD_id(x);
+					%>
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
                                 <div class="x_title">
@@ -173,7 +184,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Oferta <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020"  readonly/>
+                                            	<input class="form-control"  name="name" placeholder="ex. Primer Semestre 2020" value="<%=oferta.getNombre() %>" readonly/>
 										
                                             </div>
                                         </div>
@@ -181,7 +192,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Inicio <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" readonly/>
+                                            	<input value="<%=oferta.getFecha_inicial() %>"  class="form-control" type="date" name="finicio" id="finicio" placeholder="ex. Primer Semestre 2020" readonly/>
 										
                                             </div>
                                         </div>
@@ -189,7 +200,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Fecha Final <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020" readonly />
+                                            	<input value="<%=oferta.getFecha_final() %>" class="form-control" type="date" name="ffinal" id="ffinal" placeholder="ex. Primer Semestre 2020" readonly />
 										
                                             </div>
                                         </div>
@@ -197,7 +208,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Período <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020" readonly />
+                                            	<input value="<%=oferta.getPeriodo() %>" class="form-control" name="periodo" id="periodo" placeholder="ex. 1S2020" readonly />
 										
                                             </div>
                                         </div>
@@ -205,7 +216,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" readonly />
+                                            	<input value="<%=oferta.getDescripcion() %>" class="form-control"  name="descr" id="descr" placeholder="ex. ofertas dentro del periodo 1S 2020" readonly />
 										
                                             </div>
                                         </div>
@@ -227,6 +238,8 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
+                                
+                                
                                     <form class="" action="" method="post" novalidate>
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
@@ -235,10 +248,10 @@
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                             	<select id="select" class="form-control js-example-basic-single">
-													<option value="net">...Seleccione</option>
-													<option value="press">Curso Induccion a la docencia</option>
-													<option value="net">Curso del Uso del EVA</option>
-													<option value="mouth">Curso del uso de las reglas APA</option>
+													<option value="">...Seleccione</option>
+													<option value="1">Curso Induccion a la docencia</option>
+													<option value="2">Curso del Uso del EVA</option>
+													<option value="3">Curso del uso de las reglas APA</option>
 												</select>
                                             </div>
                                         </div>
@@ -248,8 +261,8 @@
                                             <div class="col-md-6 col-sm-6">
                                             	<select id="heard" class="form-control js-example-basic-single">
 													<option value="net">...Seleccione</option>
-													<option value="net">Juan Pablo</option>
-													<option value="press">Maria Jose</option>
+													<option value="1">Juan Pablo</option>
+													<option value="2">Maria Jose</option>
 												</select>
                                             </div>
                                         </div>
@@ -342,12 +355,7 @@
 											</div>
 
 											<table id="datatable-buttons" class="table table-striped table-bordered dataTable facultad" style="width:100%">
-												<%
-												ArrayList<Oferta_Detalle> listaOferta = new ArrayList<Oferta_Detalle>();
-												Dt_Oferta_Det dtof = new Dt_Oferta_Det();
-												Dt_Oferta dto = new Dt_Oferta();
-												listaOferta = dtof.listaOD_id(dto.getid_oferta());
-												%>
+												
 												
 												<thead>
 													<tr>
@@ -368,9 +376,9 @@
 													for (Oferta_Detalle to : listaOferta) {
 													%>
 													<tr>
-														<td><%=to.getId_capacitacion()%></td>
-														<td>Facilitador</td>
-														<td>Fecha Inicial</td>
+														<td><%=to.getCapacitacion()%></td>
+														<td><%=to.getFacilitador()%></td>
+														<td><%=to.getFecha_inicial()%></td>
 														<td>Fecha Final</td>
 														<td>Hora de Inicio</td>
 														<td>Hora de Finalización</td>

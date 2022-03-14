@@ -17,7 +17,7 @@ public class Dt_Oferta_Det {
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
 	
-	public void llena_rsFacultad(Connection c){
+	public void llena_rsOFerta_Det(Connection c){
 		try{
 			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.oferta_detalle WHERE estado<>3;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
 			rsOferta = ps.executeQuery();
@@ -33,7 +33,7 @@ public class Dt_Oferta_Det {
 		ArrayList<Oferta_Detalle> listFac = new ArrayList<Oferta_Detalle>();
 		try{
 			c = poolConexion.getConnection(); //obtenemos una conexion del pool
-			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.oferta_detalle WHERE id_oferta = "+ id, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.vw_oferta_det WHERE id_oferta = "+ id, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Oferta_Detalle ofd = new Oferta_Detalle(); //instanciamos a rol
@@ -47,6 +47,8 @@ public class Dt_Oferta_Det {
 				ofd.setId_oferta(rs.getInt("id_oferta"));
 				ofd.setId_capacitacion(rs.getInt("id_capacitacion"));
 				ofd.setId_facilitador(rs.getInt("id_facilitador"));
+				ofd.setCapacitacion(rs.getString("nombre"));
+				ofd.setFacilitador(rs.getString("nombre_completo"));
 				listFac.add(ofd);
 			}
 		}
@@ -75,43 +77,11 @@ public class Dt_Oferta_Det {
 		return listFac;
 	}
 	
-	public int getid_oferta(){
-		int x = 0;
-		try{
-			c = poolConexion.getConnection(); //obtenemos una conexion del pool
-			ps = c.prepareStatement("SELECT id_oferta from gc_mc_gofe.oferta where estado != 3 Order by id_oferta DESC Limit 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-			rs = ps.executeQuery();
-			rs.next();
-			
-			x = rs.getInt("id_oferta");
-			
-		}
-		catch (Exception e){
-			System.out.println("DATOS: ERROR EN LISTAR Facultades: "+ e.getMessage());
-			e.printStackTrace();
-		}
-		finally{
-			try {
-				if(rs != null){
-					rs.close();
-				}
-				if(ps != null){
-					ps.close();
-				}
-				if(c != null){
-					poolConexion.closeConnection(c);
-				}
-				
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		return x;
-	}
-
 	
+	
+	
+	
+	/*
 	public boolean addOferta(Oferta fc){
 		boolean guardado = false;
 		
@@ -149,5 +119,5 @@ public class Dt_Oferta_Det {
 		}
 		
 		return guardado;
-	}
+	}*/
 }
