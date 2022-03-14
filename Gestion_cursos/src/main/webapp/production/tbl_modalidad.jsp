@@ -1,3 +1,8 @@
+<%@page import="entidades.Modalidad"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.Modalidad, datos.*, java.util.*;"%>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,13 +198,21 @@
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
+												
+												<%
+											
+												ArrayList<Modalidad > listaMod = new ArrayList<Modalidad>();
+												Dt_Modalidad dtu = new Dt_Modalidad ();
+												listaMod = dtu.listaModActivos();
+												%>
 												<thead>
 													<tr>
 														
-														
+															<th>Id </th>
 														<th>Nombre </th>
 														<th>Certicada</th>
 														<th>Descripcion</th>
+														<th>Estado</th>
 													    <th>Acciones</th>
 													</tr>
 												</thead>
@@ -207,13 +220,23 @@
 
 												<tbody>
 													<%
-													for (int i = 0; i < 5; i++) {
+													
+													for (Modalidad tMod : listaMod) {
+														String estado = "";
+														if (tMod.getEstado() != 3) {
+															estado = "Activa";
+														} else {
+															estado = "Modificada";
+														}
 													%>
 													<tr>
 													
-														<td>Nombre </td>
-														<td>Certificada</td>
-														<td>Descripcion</td>
+													  <td><%=tMod.getId_modalidad()%></td>
+													  <td><%=tMod.getNombre_modalidad()%></td>
+													  <td><%= tMod.getCertificada() %></td>
+													  <td><%= tMod.getDescripcion() %></td>
+													  <td><%=estado %></td>
+														
 											
 														
 														
@@ -230,7 +253,7 @@
 
 												<tfoot>
 													<tr>
-													
+													     <th>Id </th>
 														<th>Nombre</th>
 														<th>Certificada Real</th>
 														<th>Descripcion</th>
