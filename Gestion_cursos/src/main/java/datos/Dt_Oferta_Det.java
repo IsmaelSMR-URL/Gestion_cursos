@@ -19,7 +19,7 @@ public class Dt_Oferta_Det {
 	
 	public void llena_rsOFerta_Det(Connection c){
 		try{
-			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.oferta_detalle WHERE estado<>3;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
+			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.oferta_detalle;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE, ResultSet.HOLD_CURSORS_OVER_COMMIT);
 			rsOferta = ps.executeQuery();
 		}
 		catch (Exception e){
@@ -77,24 +77,24 @@ public class Dt_Oferta_Det {
 		return listFac;
 	}
 	
-	
-	
-	
-	
-	/*
-	public boolean addOferta(Oferta fc){
+	public boolean addOferta(Oferta_Detalle fc){
 		boolean guardado = false;
 		
 		try{
 			c = poolConexion.getConnection();
-			this.llena_rsFacultad(c);
+			this.llena_rsOFerta_Det(c);
 			this.rsOferta.moveToInsertRow();
-			rsOferta.updateString("nombre", fc.getNombre());
-			rsOferta.updateInt("estado", 1);
+			
 			rsOferta.updateDate("fecha_inicial", fc.getFecha_inicial());
 			rsOferta.updateDate("fecha_final", fc.getFecha_final());
-			rsOferta.updateString("periodo", fc.getPeriodo());
-			rsOferta.updateString("descripcion", fc.getDescripcion());
+			rsOferta.updateString("hora_inicio", fc.getHora_inicio());
+			rsOferta.updateString("hora_final", fc.getHora_final());
+			rsOferta.updateString("dias", fc.getDias());
+			rsOferta.updateInt("publico", fc.getPublico());
+			rsOferta.updateInt("id_oferta", fc.getId_oferta());
+			rsOferta.updateInt("id_capacitacion", fc.getId_capacitacion());
+			rsOferta.updateInt("id_facilitador", fc.getId_facilitador());
+			
 			rsOferta.insertRow();
 			rsOferta.moveToCurrentRow();
 			guardado = true;
@@ -119,5 +119,5 @@ public class Dt_Oferta_Det {
 		}
 		
 		return guardado;
-	}*/
+	}
 }

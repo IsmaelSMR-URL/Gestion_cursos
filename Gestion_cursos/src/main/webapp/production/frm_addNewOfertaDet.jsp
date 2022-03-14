@@ -240,14 +240,20 @@
                                 <div class="x_content">
                                 
                                 
-                                    <form class="" action="" method="post" novalidate>
+                                    <form class="" action="../Sl_OfertaDet" method="post" novalidate>
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
+									   <input type="hidden" value="<%=oferta.getFecha_inicial() %>" name="finicio" id="finicio"/>
+									   <input type="hidden" value="<%=oferta.getFecha_final() %>"  name="ffinal" id="ffinal" />
+									   <input type="hidden" value="1" name="opcion" id="opcion"/>
+									   <input type="hidden" value="<%=oferta.getId_oferta() %>" name="id_oferta" id="id_oferta"/>
+									   
+									   
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="select" class="form-control js-example-basic-single">
+                                            	<select id="capacitacion" name="capacitacion" class="form-control js-example-basic-single">
 													<option value="">...Seleccione</option>
 													<option value="1">Curso Induccion a la docencia</option>
 													<option value="2">Curso del Uso del EVA</option>
@@ -259,8 +265,8 @@
                                          <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Facilitador:  <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control js-example-basic-single">
-													<option value="net">...Seleccione</option>
+                                            	<select id="facilitador" name="facilitador" class="form-control js-example-basic-single">
+													<option value="0">...Seleccione</option>
 													<option value="1">Juan Pablo</option>
 													<option value="2">Maria Jose</option>
 												</select>
@@ -287,8 +293,8 @@
 										<label class="col-form-label col-md-3 col-sm-3  label-align">Hora Inicial <span class="required">*</span>
 										</label>
 										<div class="col-md-6 col-sm-6">
-											<input class="form-control timepick" name="hfinal"
-												id="hinicial" placeholder="8:00 pm" required="required" />
+											<input class="form-control timepick" name="hinicial"
+												id="hinicial" placeholder="6:00 pm" required="required" />
 
 										</div>
 									</div>
@@ -307,7 +313,7 @@
 									<div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Dias de asistencia<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="hfinal" id="hfinal" placeholder="todos los lunes" required="required" />
+                                            	<input class="form-control"  name="dias" id="dias" placeholder="todos los lunes" required="required" />
 										
                                             </div>
                                         </div>
@@ -315,10 +321,10 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select class="form-control js-example-basic-single" name="cbxUser" id="cbxUser" required="required">
+                                            	<select class="form-control js-example-basic-single" name="publico" id="publico" required="required">
 												
-													  <option value="1">Mantener Privado</option>
-													  <option value="2">Hacer Publico</option>
+													  <option value="0">Mantener Privado</option>
+													  <option value="1">Hacer Publico</option>
 												  
 												 
 												</select>
@@ -327,7 +333,7 @@
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                    <a href="index.html" target="blank" class="btn btn-primary">Guardar</a>
+                                                    <button type='submit' class="btn btn-primary">Guardar</button>
                                                     <button type='reset' class="btn btn-success">Cancelar</button>
                                                 </div>
                                             </div>
@@ -379,10 +385,10 @@
 														<td><%=to.getCapacitacion()%></td>
 														<td><%=to.getFacilitador()%></td>
 														<td><%=to.getFecha_inicial()%></td>
-														<td>Fecha Final</td>
-														<td>Hora de Inicio</td>
-														<td>Hora de Finalización</td>
-														<td>Días de Asistencia</td>
+														<td><%=to.getFecha_final()%></td>
+														<td><%=to.getHora_inicio()%></td>
+														<td><%=to.getHora_final()%></td>
+														<td><%=to.getDias()%></td>
 														<td>
 															<a href="frm_modOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
 															<a href="frm_vwOfertaDet.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
