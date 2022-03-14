@@ -40,6 +40,12 @@
 	href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
 	rel="stylesheet">
 
+
+<link href="../vendors/jAlert-master/src/jAlert.css" rel="stylesheet">
+<script src="../vendors/jAlert-master/src/jAlert.js"> </script>
+<script src="../vendors/jAlert-master/src/jAlert-functions.js"> </script>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
 <!-- Custom Theme Style -->
 <link href="../build/css/custom.min.css" rel="stylesheet">
 <!-- bootstrap-daterangepicker -->
@@ -47,6 +53,9 @@
 <!-- bootstrap-datetimepicker -->
 <link href="../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
+
+
+<%-- <% int msg = Integer.parseInt( request.getParameter("msj") );%> --%>
 
 </head>
 
@@ -367,11 +376,10 @@
 													<tr>
 														<th>Capacitacion</th>
 														<th>Facilitador</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Hora de Inicio</th>
-														<th>Hora de Finalización</th>
+														<th>Duracion</th>
+														<th>Horario</th>
 														<th>Días de Asistencia</th>
+														<th>Visibilidad</th>
 														<th>Acciones</th>
 													</tr>
 												</thead>
@@ -380,15 +388,20 @@
 													
 													<%
 													for (Oferta_Detalle to : listaOferta) {
+														String estado = "";
+														if (to.getPublico() == 0) {
+															estado = "Privado";
+														} else {
+															estado = "Publico";
+														}
 													%>
 													<tr>
 														<td><%=to.getCapacitacion()%></td>
 														<td><%=to.getFacilitador()%></td>
-														<td><%=to.getFecha_inicial()%></td>
-														<td><%=to.getFecha_final()%></td>
-														<td><%=to.getHora_inicio()%></td>
-														<td><%=to.getHora_final()%></td>
+														<td>De <%=to.getFecha_inicial()%> a <%=to.getFecha_final()%></td>
+														<td><%=to.getHora_inicio()%> - <%=to.getHora_final()%></td>
 														<td><%=to.getDias()%></td>
+														<td><%=estado %></td>
 														<td>
 															<a href="frm_modOfertaDet.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar Gastos"></i></a> 
 															<a href="frm_vwOfertaDet.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar gasto"></i></a> 
@@ -404,11 +417,10 @@
 													<tr>
 														<th>Capacitacion</th>
 														<th>Facilitador</th>
-														<th>Fecha Inicial</th>
-														<th>Fecha Final</th>
-														<th>Hora de Inicio</th>
-														<th>Hora de Finalización</th>
+														<th>Duracion</th>
+														<th>Horario</th>
 														<th>Días de Asistencia</th>
+														<th>Visibilidad</th>
 														<th>Acciones</th>
 													</tr>
 												</tfoot>
@@ -437,6 +449,7 @@
 		</div>
 	</div>
     
+
 	<!-- jQuery -->
 	<script src="../vendors/jquery/dist/jquery.min.js"></script>
 	<!-- Bootstrap -->
@@ -474,20 +487,40 @@
 	
 	<!-- bootstrap-datetimepicker -->    
     <script src="../vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    
+    
 	<script  type="text/javascript">
 	
 	 $(document).ready( function{
-			
-			$('#datatable-buttons').DataTable( {
-			    responsive: true
-			} );
-			
+		 var mensaje = 0;
+	      mensaje = 1;
 
-			
-			$('.js-example-basic-single').select2();
+	      if (mensaje == "1") {
+	        javascript:successAlert('Exito', 'Los datos han sido registrado exitosamente!');
+	      }
+	      if (mensaje == "2") {
+	        errorAlert('Error', 'Revise los datos e intente nuevamente!!!');
+	      }
+
+	      if (mensaje == "3") {
+	    	  errorAlert('Error', 'La fecha inicial ingresada no es compatible con la del periodo');
+	      }
+
+	      if (mensaje == "4") {
+	    	  errorAlert('Error', 'La fecha final ingresada no es compatible con la del periodo');
+	      }
+
+	      if (mensaje == "6") {
+	        errorAlert('Error', 'No se logro desactivar la categoria');
+	      }
+	      
+		 $('#datatable-buttons').DataTable( {
+			    responsive: true
+			});
+		$('.js-example-basic-single').select2();
 		});
  		
-		function hideshow(){
+	 function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
 			var eye = document.getElementById("eye");
