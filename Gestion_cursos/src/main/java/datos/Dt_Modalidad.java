@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import entidades.Facultad;
 import entidades.Modalidad;
 
 public class Dt_Modalidad {
@@ -66,4 +68,43 @@ public class Dt_Modalidad {
 		}
 		return listMod;
 	}
+	
+	public boolean addModalidad(Modalidad Mod){
+		boolean guardado = false;
+		
+		try{
+			c = poolConexion.getConnection();
+			this.llenar_rsModalidad(c);
+			this.rsModalidad.moveToInsertRow();
+			rsModalidad.updateString("nombre_modalidad", Mod.getNombre_modalidad());
+			rsModalidad.updateInt("certificada", Mod.getCertificada());
+			rsModalidad.updateString("descripcion", Mod.getDescripcion());
+			rsModalidad.updateInt("estado", 1);
+			rsModalidad.insertRow();
+			rsModalidad.moveToCurrentRow();
+			guardado = true;
+		}
+		catch (Exception e) {
+			System.err.println("ERROR AL GUARDAR Modalidad: "+e.getMessage());
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				if(rsModalidad != null){
+					rsModalidad.close();
+				}
+				if(c != null){
+					poolConexion.closeConnection(c);
+				}
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return guardado;
+	}
 }
+
+
