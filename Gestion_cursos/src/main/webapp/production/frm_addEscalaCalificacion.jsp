@@ -152,14 +152,12 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
+                                    <form action="../Sl_EscalaCalificacion" method="POST" novalidate>
+                                        <input type="hidden" value="1" name="opcion" id="opcion"/>
 										<div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Calificación: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" name="clasificacion" id="clasificacion" placeholder="Escriba la Calificacion" />
+                                            	<input class="form-control" name="calificacion" id="calificacion" placeholder="Escriba la Calificacion..." required="required" />
 										
                                             </div>
                                         </div>
@@ -181,15 +179,15 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" >
+                                            	<select id="descripcion" class="form-control" required>
 													<option value="net">...Seleccione</option>
-													<option value="apr">Aprobado</option>
-													<option value="rep">Reprobado</option>
+													<option value="descripcion">Aprobado</option>
+													<option value="deacripcion">Reprobado</option>
 												</select>
                                             </div>
                                         </div>
                                         
-                                        <div class="field item form-group">
+                                        <!-- <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Estado: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                             	<select id="heard" class="form-control" disabled>
@@ -198,7 +196,7 @@
 													<option value="3">Eliminado</option>
 												</select>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         
                              
                                         <div class="ln_solid">

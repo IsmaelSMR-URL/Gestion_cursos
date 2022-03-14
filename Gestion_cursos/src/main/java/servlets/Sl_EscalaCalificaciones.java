@@ -55,12 +55,12 @@ public class Sl_EscalaCalificaciones extends HttpServlet{
 		case 1:
 			try {
 				if(dec.addEscalaCalificacion(ec)) {
-					response.sendRedirect("production/tbl_escalacalificacion.jsp?msj=1");
+					response.sendRedirect("production/tbl_EscalaCalificacion.jsp?msj=1");
 				}else {
-					response.sendRedirect("production/tbl_escalacalificacion.jsp?msj=2");
+					response.sendRedirect("production/tbl_EscalaCalificacion.jsp?msj=2");
 				}
 			}catch(Exception e) {
-				System.out.println("Error Sl_EscalaCalificacion: "+e.getMessage());
+				System.out.println("Error Sl_EscalaCalificacion: opc1"+e.getMessage());
 				e.printStackTrace();
 			}
 			break;

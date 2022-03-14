@@ -1,7 +1,6 @@
 package datos;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +36,7 @@ public class Dt_EscalaCalificacion {
 				ps = c.prepareStatement("SELECT * FROM gc_mcgofe.escalacalificacion WHERE estado<>3;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				rs = ps.executeQuery();
 				while(rs.next()){
-					EscalaCalificacion esc = new EscalaCalificacion(); //instanciamos a rol
+					EscalaCalificacion esc = new EscalaCalificacion(); //instanciamos a escalacalificacion
 					esc.setId_escala(rs.getInt("id_escala"));
 					esc.setCalificacion(rs.getString("calificacion"));
 					esc.setDescripcion(rs.getString("descripcion"));
@@ -70,41 +69,26 @@ public class Dt_EscalaCalificacion {
 			return listEsc;
 		}
 		
-		public int getid_escalacalificacion(){
-			int x = 0;
-			try{
-				c = poolConexion.getConnection(); //obtenemos una conexion del pool
-				ps = c.prepareStatement("SELECT id_oferta from gc_mc_gofe.escalacalificacion where estado != 3 Order by id_oferta DESC Limit 1", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-				rs = ps.executeQuery();
-				rs.next();
-				
-				x = rs.getInt("id_escala");
-				
-			}
-			catch (Exception e){
-				System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES: "+ e.getMessage());
-				e.printStackTrace();
-			}
-			finally{
-				try {
-					if(rs != null){
-						rs.close();
-					}
-					if(ps != null){
-						ps.close();
-					}
-					if(c != null){
-						poolConexion.closeConnection(c);
-					}
-					
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-			}
-			return x;
-		}
+		/*
+		 * public int getid_escalacalificacion(){ int x = 0; try{ c =
+		 * poolConexion.getConnection(); //obtenemos una conexion del pool ps = c.
+		 * prepareStatement("SELECT int id_escala from gc_mc_gofe.escalacalificacion where estado != 3 Order by id_oferta DESC Limit 1"
+		 * , ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY); rs =
+		 * ps.executeQuery(); rs.next();
+		 * 
+		 * x = rs.getInt("id_escala");
+		 * 
+		 * } catch (Exception e){
+		 * System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES: "+
+		 * e.getMessage()); e.printStackTrace(); } finally{ try { if(rs != null){
+		 * rs.close(); } if(ps != null){ ps.close(); } if(c != null){
+		 * poolConexion.closeConnection(c); }
+		 * 
+		 * } catch (SQLException e) { // TODO Auto-generated catch block
+		 * e.printStackTrace(); }
+		 * 
+		 * } return x; }
+		 */
 
 		
 		public boolean addEscalaCalificacion(EscalaCalificacion ec){
