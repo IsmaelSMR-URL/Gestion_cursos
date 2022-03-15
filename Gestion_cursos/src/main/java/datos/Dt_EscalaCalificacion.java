@@ -23,13 +23,13 @@ public class Dt_EscalaCalificacion {
 				rsEscalaCal = ps.executeQuery();
 			}
 			catch (Exception e){
-				System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES "+ e.getMessage());
+				System.out.println("DATOS: ERROR EN LISTAR ESCALA CALIFICACIONES "+ e.getMessage());
 				e.printStackTrace();
 			}
 		}
 		
 		//Metodo para visualizar usuarios registrados y activos
-		public ArrayList<EscalaCalificacion> listaFacActivos(){
+		public ArrayList<EscalaCalificacion> listaEscActivos(){
 			ArrayList<EscalaCalificacion> listEsc = new ArrayList<EscalaCalificacion>();
 			try{
 				c = poolConexion.getConnection(); //obtenemos una conexion del pool
@@ -45,7 +45,7 @@ public class Dt_EscalaCalificacion {
 				}
 			}
 			catch (Exception e){
-				System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES: "+ e.getMessage());
+				System.out.println("DATOS: ERROR EN LISTAR ESCALA CALIFICACIONES: "+ e.getMessage());
 				e.printStackTrace();
 			}
 			finally{
@@ -68,29 +68,7 @@ public class Dt_EscalaCalificacion {
 			}
 			return listEsc;
 		}
-		
-		/*
-		 * public int getid_escalacalificacion(){ int x = 0; try{ c =
-		 * poolConexion.getConnection(); //obtenemos una conexion del pool ps = c.
-		 * prepareStatement("SELECT int id_escala from gc_mc_gofe.escalacalificacion where estado != 3 Order by id_oferta DESC Limit 1"
-		 * , ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY); rs =
-		 * ps.executeQuery(); rs.next();
-		 * 
-		 * x = rs.getInt("id_escala");
-		 * 
-		 * } catch (Exception e){
-		 * System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES: "+
-		 * e.getMessage()); e.printStackTrace(); } finally{ try { if(rs != null){
-		 * rs.close(); } if(ps != null){ ps.close(); } if(c != null){
-		 * poolConexion.closeConnection(c); }
-		 * 
-		 * } catch (SQLException e) { // TODO Auto-generated catch block
-		 * e.printStackTrace(); }
-		 * 
-		 * } return x; }
-		 */
-
-		
+				
 		public boolean addEscalaCalificacion(EscalaCalificacion ec){
 			boolean guardado = false;
 			
@@ -107,7 +85,7 @@ public class Dt_EscalaCalificacion {
 				guardado = true;
 			}
 			catch (Exception e) {
-				System.err.println("ERROR AL GUARDAR ESCALDA CALIFICACIONES: "+e.getMessage());
+				System.err.println("ERROR AL GUARDAR ESCALA CALIFICACIONES: "+e.getMessage());
 				e.printStackTrace();
 			}
 			finally{
