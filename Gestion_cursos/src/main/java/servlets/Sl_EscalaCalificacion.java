@@ -12,16 +12,16 @@ import entidades.EscalaCalificacion;
 
 
 /**
- * Servlet implementation class Sl_OfertaEnc
+ * Servlet implementation class Sl_EscalaCalificacion
  */
-@WebServlet("/Sl_EscalaCalificaciones")
-public class Sl_EscalaCalificaciones extends HttpServlet{
+@WebServlet("/Sl_EscalaCalificacion")
+public class Sl_EscalaCalificacion extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	/**
      * @see HttpServlet#HttpServlet()
      */
-    public Sl_EscalaCalificaciones() {
+    public Sl_EscalaCalificacion() {
         super();
         // TODO Auto-generated constructor stub
     }

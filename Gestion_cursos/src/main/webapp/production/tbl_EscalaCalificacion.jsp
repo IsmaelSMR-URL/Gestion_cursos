@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-     pageEncoding="ISO-8859-1" import="java.util.*;"%>
+     pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -198,9 +198,9 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                       <%
                       	ArrayList<EscalaCalificacion > listaEscalaCalificacion = new ArrayList<EscalaCalificacion>();
-                      	Dt_escalaCalificacion dec = new Dt_escalaCalificacion();
-                      	listaEscalaCalificacion = dec.listaUserActivos();
-	                  %>
+                      	Dt_EscalaCalificacion dec = new Dt_EscalaCalificacion();
+                      	listaEscalaCalificacion = dec.listaEscActivos();
+	                  %> 
                       <thead>
                         <tr>
                           <th>Id</th>
@@ -212,17 +212,17 @@
                       </thead>
                       <tbody>                      
 					 <%
-                      for(Tbl_escalaCalificacion tec :listaEscalaCalificacion){
+                      for(EscalaCalificacion tec :listaEscalaCalificacion){
                       		String estado = "";
-                      		if(tu.getEstado()!=3){
+                      		if(tec.getEstado()!=3){
                       			estado = "Activo";
                       		}
                       		else{
                       			estado = "Modificada";
-                      		}*/
+                      		}
                       %>
                         <tr>
-                          <td><%=tec.getId_EscalaCalificacion() %></td>
+                          <td><%=tec.getId_escala() %></td>
                           <td><%=tec.getCalificacion() %></td>
                           <td><%=tec.getDescripcion() %></td>
                           <td><%=estado %></td>

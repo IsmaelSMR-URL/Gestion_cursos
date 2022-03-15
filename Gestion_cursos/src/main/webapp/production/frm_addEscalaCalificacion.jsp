@@ -176,7 +176,7 @@
                                             </div>
                                         </div> -->
                                         
-                                        <div class="field item form-group">
+                                        <!-- <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
                                             	<select id="descripcion" class="form-control" required>
@@ -184,6 +184,14 @@
 													<option value="descripcion">Aprobado</option>
 													<option value="deacripcion">Reprobado</option>
 												</select>
+                                            </div>
+                                        </div> -->
+                                        
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción: <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control" name="descripcion" id="descripcion" placeholder="Escriba la Descripcion..." required="required" />
+										
                                             </div>
                                         </div>
                                         
