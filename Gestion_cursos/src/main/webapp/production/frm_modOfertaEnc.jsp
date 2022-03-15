@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,11 +244,16 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" disabled>
-													<option value="net">...Seleccione</option>
-													<option value="press">Press</option>
-													<option value="net">Internet</option>
-													<option value="mouth">Word of mouth</option>
+                                            	<% 
+													ArrayList<Vw_Capacitacion> listaCap = new ArrayList<Vw_Capacitacion>();
+													Dt_capacitacion dtc = new Dt_capacitacion();
+													listaCap = dtc.listaCapActivos();
+												%>
+                                            	<select id="capacitacion" name="capacitacion" class="form-control js-example-basic-single">
+													<option value="">...Seleccione</option>
+													<%for(Vw_Capacitacion vc:listaCap){ %>
+													<option value="<%=vc.getId_capacitacion() %>"> ( <%=vc.getModalidad() %> ) <%=vc.getNombre() %></option>
+													<%} %>
 												</select>
                                             </div>
                                         </div>

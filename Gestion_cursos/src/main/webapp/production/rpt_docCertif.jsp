@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gestion de Cursos | Capacitacion </title>
+    <title>Gestion de Cursos | Reporte Cerficados </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,15 +31,11 @@
         <div class="main_container">
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
-                    <div class="navbar nav_title" style="border: 0;">
+                   <div class="navbar nav_title" style="border: 0;">
 						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
 							<span>Dpto. Educacion</span></a>
 					</div>
-
                     <div class="clearfix"></div>
-
-
-                    <br />
 
                     <!-- sidebar menu -->
                     <div id="sidebar-menu"
@@ -105,6 +101,7 @@
 					</div>
                     <!-- /sidebar menu -->
 
+                    
                 </div>
             </div>
 
@@ -134,7 +131,7 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Agregar nueva Capacitacion</h3>
+                            <h3>Ingresar parametros para Reporte</h3>
                         </div>
 
                         <div class="title_right">
@@ -147,43 +144,109 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Ingrese una nueva capacitacion </h2>
+                                    <h2>Parametros</h2>
                                     
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="../Sl_Capacitacion" method="post" novalidate>
+                                    <form class="" action="rpt_Certificados.jsp" method="post" novalidate>
                                     <input type="hidden" value="1" name="opcion" id="opcion"/>
+                                    <% 
+									ArrayList<Oferta> listaCap = new ArrayList<Oferta>();
+									Dt_Oferta dtu = new Dt_Oferta();
+									listaCap = dtu.listaOfActivos();
+									
+									ArrayList<Facultad> listaFac= new ArrayList<Facultad>();
+									Dt_Facultad dtf = new Dt_Facultad();
+									listaFac = dtf.listaFacActivos();
+									
+									ArrayList<Carrera> listaCar= new ArrayList<Carrera>();
+									Dt_carrera dtc = new Dt_carrera();
+									listaCar = dtc.listaCarActivos();
+									%>
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de la Capacitacion: <span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Año: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" max="60" name="nombre" id="nombre" required/>
+                                            	<select id="year" name="year" class="form-control" >
+                                            		<option value="0">...Seleccione</option>
+													<% for(Oferta vc: listaCap){ %>
+													<option value="<%=(vc.getFecha_inicial().getYear()+1900)%>"> <%=(vc.getFecha_inicial().getYear()+1900) %> </option>
+													<%} %>
+												</select>
 										
                                             </div>
                                         </div>
-                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Modalidad <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<% 
-													ArrayList<Modalidad> listaCap = new ArrayList<Modalidad>();
-													Dt_Modalidad dtu = new Dt_Modalidad();
-													listaCap = dtu.listaModActivos();
-												%>
-													
-                                            	<select id="modalidad" name="modalidad" class="form-control" >
-													<option value="">...Seleccione</option>
-													
-													<% for(Modalidad vc: listaCap){ %>
+										<div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Periodo<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="periodo" name="periodo" class="form-control">
+													<option value="0">...Seleccione</option>
+													<% for(Oferta vc: listaCap){ %>
 														
-													<option value="<%=vc.getId_modalidad()%>"><%=vc.getNombre_modalidad() %></option>
+													<option value="<%=vc.getPeriodo()%>"> <%=vc.getPeriodo() %> </option>
 													<%} %>
 												</select>
-                                            </div>
-                                        </div>
-                                        <div class="ln_solid">
+											</div>
+										</div>
+										
+										<div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="sexo" name="sexo" class="form-control">
+													<option value="">...Seleccione</option>
+													<option value="0">Femenino</option>
+													<option value="1">Masculino</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Facultad<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="facultad" name="facultad" class="form-control">
+													<option value="0">...Seleccione</option>
+													<% for(Facultad f: listaFac){ %>
+														
+													<option value="<%=f.getId_facultad() %>"> <%=f.getNombre_facultad() %> </option>
+													<%} %>
+												</select>
+											</div>
+										</div>
+										
+										<div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Departamento<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="depto" name="depto" class="form-control">
+													<option value="0">...Seleccione</option>
+													<option value="1">depto</option>
+													<option value="2">depto2</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Carrera<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="carrera" name="carrera" class="form-control">
+													<option value="0">...Seleccione</option>
+													<% for(Carrera c: listaCar){ %>
+														
+													<option value="<%=c.getId_carrera() %>"> <%=c.getNombre_carrera() %> </option>
+													<%} %>
+												</select>
+											</div>
+										</div>
+										
+										
+										<div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
                                                     <button type='submit' class="btn btn-primary">Guardar</button>

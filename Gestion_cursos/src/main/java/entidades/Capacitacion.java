@@ -5,6 +5,8 @@ public class Capacitacion {
 	private String nombre;
 	private int estado;
 	private int id_modalidad;
+	
+	
 	public int getId_capacitacion() {
 		return id_capacitacion;
 	}

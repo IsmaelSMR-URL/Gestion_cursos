@@ -262,11 +262,16 @@
                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Capacitacion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
+                                            	<% 
+													ArrayList<Vw_Capacitacion> listaCap = new ArrayList<Vw_Capacitacion>();
+													Dt_capacitacion dtc = new Dt_capacitacion();
+													listaCap = dtc.listaCapActivos();
+												%>
                                             	<select id="capacitacion" name="capacitacion" class="form-control js-example-basic-single">
 													<option value="">...Seleccione</option>
-													<option value="1">Curso Induccion a la docencia</option>
-													<option value="2">Curso del Uso del EVA</option>
-													<option value="3">Curso del uso de las reglas APA</option>
+													<%for(Vw_Capacitacion vc:listaCap){ %>
+													<option value="<%=vc.getId_capacitacion() %>"> ( <%=vc.getModalidad() %> ) <%=vc.getNombre() %></option>
+													<%} %>
 												</select>
                                             </div>
                                         </div>

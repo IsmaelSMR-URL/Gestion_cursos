@@ -68,7 +68,7 @@ public class Dt_capacitacion {
 		return listCar;
 	}
 	
-	public boolean addCarrera(Capacitacion ca){
+	public boolean addCapacitacion(Capacitacion ca){
 		boolean guardado = false;
 		
 		try{
@@ -77,7 +77,7 @@ public class Dt_capacitacion {
 			this.rsCarrera.moveToInsertRow();
 			rsCarrera.updateString("nombre", ca.getNombre());
 			rsCarrera.updateInt("estado", 1);
-			rsCarrera.updateInt("id_modalidad", ca.getId_capacitacion());
+			rsCarrera.updateInt("id_modalidad", ca.getId_modalidad());
 			rsCarrera.insertRow();
 			rsCarrera.moveToCurrentRow();
 			guardado = true;

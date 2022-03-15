@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.*;" %>
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,14 +165,22 @@
 										
                                             </div>
                                         </div>
-                                                         <div class="field item form-group">
+                                        <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Modalidad <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" >
-													<option value="net">...Seleccione</option>
-													<option value="press">Press</option>
-													<option value="net">Internet</option>
-													<option value="mouth">Word of mouth</option>
+                                            	<% 
+													ArrayList<Modalidad> listaCap = new ArrayList<Modalidad>();
+													Dt_Modalidad dtu = new Dt_Modalidad();
+													listaCap = dtu.listaModActivos();
+												%>
+													
+                                            	<select id="modalidad" name="modalidad" class="form-control" >
+													<option value="">...Seleccione</option>
+													
+													<% for(Modalidad vc: listaCap){ %>
+														
+													<option value="<%=vc.getId_modalidad()%>"><%=vc.getNombre_modalidad() %></option>
+													<%} %>
 												</select>
                                             </div>
                                         </div>
