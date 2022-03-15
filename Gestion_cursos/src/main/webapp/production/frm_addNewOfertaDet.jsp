@@ -41,19 +41,15 @@
 	rel="stylesheet">
 
 
-<link href="../vendors/jAlert-master/src/jAlert.css" rel="stylesheet">
+<link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- <link href="../vendors/jAlert-master/src/jAlert.css" rel="stylesheet">
 <script src="../vendors/jAlert-master/src/jAlert.js"> </script>
-<script src="../vendors/jAlert-master/src/jAlert-functions.js"> </script>
+<script src="../vendors/jAlert-master/src/jAlert-functions.js"> </script> -->
 <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
 
 <!-- Custom Theme Style -->
 <link href="../build/css/custom.min.css" rel="stylesheet">
-<!-- bootstrap-daterangepicker -->
- <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-<!-- bootstrap-datetimepicker -->
-<link href="../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-
-
 
 <%-- <% int msg = Integer.parseInt( request.getParameter("msj") );%> --%>
 
@@ -335,7 +331,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select class="form-control js-example-basic-single" name="publico" id="publico" required="required">
+                                            	<select name="publico" id="publico" required="required" class="form-control js-example-basic-single">
 												
 													  <option value="0">Mantener Privado</option>
 													  <option value="1">Hacer Publico</option>
@@ -493,11 +489,17 @@
 	<!-- bootstrap-datetimepicker -->    
     <script src="../vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
     
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.min.js"></script>
     
 	<script  type="text/javascript">
+	$(document).ready(function() {
+        $('.js-example-basic-single').select2();
+        
+    });
 	
-	 $(document).ready( function{
-		 var mensaje = 0;
+	
+		/*  var mensaje = 0;
 	      mensaje = 1;
 
 	      if (mensaje == "1") {
@@ -517,14 +519,8 @@
 
 	      if (mensaje == "6") {
 	        errorAlert('Error', 'No se logro desactivar la categoria');
-	      }
+	      } */
 	      
-		 $('#datatable-buttons').DataTable( {
-			    responsive: true
-			});
-		$('.js-example-basic-single').select2();
-		});
- 		
 	 function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -542,7 +538,9 @@
 			}
 		}
 	</script>
-	<script src="../vendors/select2/dist/js/select2.min.js"></script>
+
+    
+    
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
  	

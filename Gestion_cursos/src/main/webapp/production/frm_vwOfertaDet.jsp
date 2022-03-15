@@ -319,7 +319,7 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 select2-container">
-                                            	<select disabled id="heard" class="form-control">
+                                            	<select disabled id="heard" class="form-control js-example-basic-single">
 													<option value="" class="select2-dropdown">Mantener Privado</option>
 													<option value="" class="select2-dropdown">Hacer Público</option>
 													
@@ -393,6 +393,10 @@
 <script src="../vendors/select2/dist/js/select2.min.js"></script>
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
-
+	<script>
+		$(document).ready(function() {
+		    $('.js-example-basic-single').select2();
+		});
+	</script>
 </body>
 </html>

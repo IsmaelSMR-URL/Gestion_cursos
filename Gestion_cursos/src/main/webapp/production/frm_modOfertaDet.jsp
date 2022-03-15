@@ -470,5 +470,10 @@
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
 
+	<script>
+		$(document).ready(function() {
+		    $('.js-example-basic-single').select2();
+		});
+	</script>
 </body>
 </html>

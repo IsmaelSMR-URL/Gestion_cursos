@@ -173,7 +173,7 @@
 													listaCap = dtu.listaModActivos();
 												%>
 													
-                                            	<select id="modalidad" name="modalidad" class="form-control" >
+                                            	<select id="modalidad" name="modalidad" class="form-control js-example-basic-single" >
 													<option value="">...Seleccione</option>
 													
 													<% for(Modalidad vc: listaCap){ %>
@@ -218,6 +218,10 @@
     
     <!-- Javascript functions	-->
 	<script>
+	$(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+	
 		function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -279,11 +283,6 @@
     <script src="../vendors/select2/dist/js/select2.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-    </script>
-
+   
 </body>
 </html>

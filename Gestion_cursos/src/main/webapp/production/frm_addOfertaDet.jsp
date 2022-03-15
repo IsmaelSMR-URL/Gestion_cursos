@@ -38,7 +38,7 @@
 <link
 	href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
 	rel="stylesheet">
-
+<link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
 <!-- Custom Theme Style -->
 <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
@@ -445,12 +445,11 @@
 	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
 	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 	<script>
- 		$(document).ready( function{
- 			$('.js-example-basic-single').select2();
- 			$('#datatable-buttons').DataTable( {
- 			    responsive: true
- 			} );
- 		});
+ 		$(document).ready(function() {
+ 	        $('.js-example-basic-single').select2();
+ 	       
+ 	    });
+ 		
  		
 		function hideshow(){
 			var password = document.getElementById("password1");

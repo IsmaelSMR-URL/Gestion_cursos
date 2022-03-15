@@ -38,7 +38,9 @@
 <link
 	href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
 	rel="stylesheet">
-
+	
+	<!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet" />
 <!-- Custom Theme Style -->
 <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
@@ -318,7 +320,7 @@
                                         <div class="form-group row">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Publico <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6 select2-container">
-                                            	<select disabled id="heard" class="form-control">
+                                            	<select disabled id="heard" class="form-control js-example-basic-single">
 													<option value="" class="select2-dropdown">Mantener Privado</option>
 													<option value="" class="select2-dropdown">Hacer Público</option>
 													
@@ -445,5 +447,10 @@
 	<!-- Custom Theme Scripts -->
 	<script src="../build/js/custom.min.js"></script>
 
+	<script>
+		$(document).ready(function() {
+		    $('.js-example-basic-single').select2();
+		});
+	</script>
 </body>
 </html>

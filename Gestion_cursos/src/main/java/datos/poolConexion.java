@@ -18,7 +18,7 @@ public class poolConexion
 //	private static String url = "jdbc:mysql://localhost:3306/flesnic?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 	private static String url = "jdbc:mysql://localhost:3306/gc_mcgofe?autoReconnect=true&useSSL=false&serverTimezone=UTC";
 	private static String user = "root";
-	private static String pass="1234";
+	private static String pass="mysqlMarlie";
 
     //Constructor
 	private poolConexion()
