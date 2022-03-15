@@ -277,6 +277,7 @@
 
                         <div class="title_right">
                             <div class="col-md-5 col-sm-5 form-group pull-right top_search">
+                            
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search for...">
                                     <span class="input-group-btn">
@@ -297,31 +298,48 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
+                                    <form class="" action="../Sl_Modalidad" method="post" novalidate>
+                                    <input type="hidden" value="1" name="opcion" id="opcion"/>
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
+
+
+
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Modalidad: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="ex. John f. Kennedy" required="required" />
+                                            	<input class="form-control" name="name" placeholder="ex. John f. Kennedy" required="required" />
 										
-                                            </div>
+                                            
                                         </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">	Certificada: <span class="required">*</span></label>
+                                        </div>
+                                          <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Descripcion <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="cert" placeholder="ex. John f. Kennedy" required="required" />
+                                            	<input class="form-control" name="descripcion" placeholder="ex. John f. Kennedy" required="required" />
 										
-                                            </div>
+                                            
                                         </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Descripcion: <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="descripcion" placeholder="ex. John f. Kennedy" required="required" />
+                                        </div>
+                                        
+                                        
+                                        
+                       
+                                            	
 										
-                                            </div>
+                                        <div class="col-md-6 col-sm-6">
+												<select id="certificada" name="certificada" class="form-control">
+													<option value="null">...Seleccione</option>
+													<option value="1"> 1</option>
+													<option value="2">0</option>
+													
+												</select>
+											</div>
                                         </div>
+                                        
+                                        
+                                        
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">

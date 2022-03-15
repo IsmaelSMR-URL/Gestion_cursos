@@ -15,7 +15,7 @@ import entidades.Modalidad;
 
 @WebServlet("/Sl_Modalidad")
 
-public class SI_Modalidad extends HttpServlet{
+public class Sl_Modalidad extends HttpServlet{
 	
 	
 	private static final long serialVersionUID = 1L;
@@ -23,7 +23,7 @@ public class SI_Modalidad extends HttpServlet{
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SI_Modalidad() {
+    public Sl_Modalidad() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,11 +46,11 @@ public class SI_Modalidad extends HttpServlet{
 		Modalidad Mod = new Modalidad();
 		Dt_Modalidad dtm = new Dt_Modalidad();
 		// CONSTRUIMOS EL OBJETO CON LOS VALORES DE LOS CONTROLES
-		Mod.setNombre_modalidad(request.getParameter("nModalidad"));
-		 int certif = Integer.parseInt(request.getParameter("setCertificada"));
+		Mod.setNombre_modalidad(request.getParameter("name"));
+		 int certif = Integer.parseInt(request.getParameter("certificada"));
 		Mod.setCertificada(certif);
 		
-		Mod.setDescripcion(request.getParameter("nDescripcion"));
+		Mod.setDescripcion(request.getParameter("descripcion"));
 		
 		
 		////////////////////////////////////////////////////////////////////
