@@ -23,7 +23,7 @@ public class Dt_EscalaCalificacion {
 				rsEscalaCal = ps.executeQuery();
 			}
 			catch (Exception e){
-				System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES "+ e.getMessage());
+				System.out.println("DATOS: ERROR EN LISTAR ESCALA CALIFICACIONES "+ e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -45,7 +45,7 @@ public class Dt_EscalaCalificacion {
 				}
 			}
 			catch (Exception e){
-				System.out.println("DATOS: ERROR EN LISTAR ESCALDA CALIFICACIONES: "+ e.getMessage());
+				System.out.println("DATOS: ERROR EN LISTAR ESCALA CALIFICACIONES: "+ e.getMessage());
 				e.printStackTrace();
 			}
 			finally{
@@ -85,7 +85,7 @@ public class Dt_EscalaCalificacion {
 				guardado = true;
 			}
 			catch (Exception e) {
-				System.err.println("ERROR AL GUARDAR ESCALDA CALIFICACIONES: "+e.getMessage());
+				System.err.println("ERROR AL GUARDAR ESCALA CALIFICACIONES: "+e.getMessage());
 				e.printStackTrace();
 			}
 			finally{
