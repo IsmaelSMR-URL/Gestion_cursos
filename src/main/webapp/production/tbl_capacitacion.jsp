@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+.jsp<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
     
 <!DOCTYPE html>
@@ -106,7 +106,7 @@
 									<ul class="nav child_menu">
 										<li><a href="rpt_general.jsp">General</a></li>
 										<li><a href="rpt_docCap.jsp">Docentes Capacitados</a></li>
-										<li><a href="rpt_docEv">Docentes por Evaluacion</a></li>
+										<li><a href="rpt_docEv.jsp">Docentes por Evaluacion</a></li>
 										<li><a href="rpt_docCertif.jsp">Docentes Certificados</a></li>
 									</ul>
 								</li>

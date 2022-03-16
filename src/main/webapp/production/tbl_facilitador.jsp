@@ -73,55 +73,57 @@
 								<li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_Facilitador.jsp">Facilitador</a></li>
+										<li><a href="tbl_usuario.jsp">Usuario</a></li>
 										<li><a href="tbl_rol.jsp">Rol</a></li>
 										<li><a href="tbl_opciones.jsp">Opciones</a></li>
-										<li><a href="tbl_FacilitadorRol.jsp">Asignar roles a Facilitador</a></li>
-										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
-									</ul>
-								</li>
-								
+										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a
+												usuario</a></li>
+										<li><a href="tbl_RolOpciones">Asignar opciones a los
+												roles</a></li>
+									</ul></li>
+
 								<li><a><i class="fa fa-institution"></i> Catalogos <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="tbl_facultad.jsp">Facultad</a></li>
 										<li><a href="tbl_departamento.jsp">Departamento</a></li>
-										<li><a href="tbl_carrera.jsp">Carrera</a></li>
-									</ul>
-								</li>
-									
+										<li><a href="form_validation.html">Carrera</a></li>
+									</ul></li>
+
 								<li><a><i class="fa fa-book"></i>Oferta <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_Facilitador.jsp">Facilitador</a></li>
+										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador">Facilitador</a></li>
+										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
-									</ul>
-								</li>
-								
+									</ul></li>
+
 								<li><a><i class="fa fa-archive"></i> Inscripcion <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_inscripcion.jsp">Gestion de Inscripciones</a></li>
-										<li><a href="frm_addInscripcion.jsp">Inscripcion Docente</a></li>
-									</ul>
-								</li>
-								<li><a><i class="fa fa-file-o"></i> Reportes Parametrizados<span class="fa fa-chevron-down"></span></a>
+										<li><a href="tbl_inscripcion.jsp">Gestion de
+												Inscripciones</a></li>
+										<li><a href="frm_addInscripcion.jsp">Formulario de
+												Inscripcion</a></li>
+									</ul></li>
+
+								<li><a><i class="fa fa-file-o"></i> Reportes
+										Parametrizados<span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="rpt_general.jsp">General</a></li>
 										<li><a href="rpt_docCap.jsp">Docentes Capacitados</a></li>
-										<li><a href="rpt_docEv">Docentes por Evaluacion</a></li>
+										<li><a href="rpt_docEv.jsp">Docentes por Evaluacion</a></li>
 										<li><a href="rpt_docCertif.jsp">Docentes Certificados</a></li>
-									</ul>
-								</li>
+									</ul></li>
+
 								<li><a><i class="fa fa-clone"></i>Evaluacion <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_EscalaCalificacion.jsp">Escalas de Evaluacion</a></li>
-										<li><a href="tbl_evaluar.jsp">Evaluar </a></li>
-									</ul>
-								</li>
+										<li><a href="fixed_sidebar.html">Escalas de
+												Evaluacion</a></li>
+										<li><a href="fixed_footer.html">Evaluar </a></li>
+									</ul></li>
 							</ul>
 						</div>
 

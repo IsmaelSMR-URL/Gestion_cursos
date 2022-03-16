@@ -90,7 +90,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador">Facilitador</a></li>
+										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
 									</ul></li>
 
@@ -107,7 +107,7 @@
 									<ul class="nav child_menu">
 										<li><a href="rpt_general.jsp">General</a></li>
 										<li><a href="rpt_docCap.jsp">Docentes Capacitados</a></li>
-										<li><a href="rpt_docEv">Docentes por Evaluacion</a></li>
+										<li><a href="rpt_docEv.jsp">Docentes por Evaluacion</a></li>
 										<li><a href="rpt_docCertif.jsp">Docentes Certificados</a></li>
 									</ul></li>
 								<li><a><i class="fa fa-clone"></i>Evaluacion <span

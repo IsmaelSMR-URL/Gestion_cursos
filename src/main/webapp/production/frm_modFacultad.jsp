@@ -70,7 +70,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador">Facilitador</a></li>
+										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
 									</ul>
 								</li>

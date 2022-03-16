@@ -42,16 +42,16 @@
                     <br />
 
                     <!-- sidebar menu -->
-                    <div id="sidebar-menu"
-						class="main_menu_side hidden-print main_menu">
-						<div class="menu_section">
-							<ul class="nav side-menu">
-								<li><a><i class="fa fa-shield"></i> Seguridad <span
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="tbl_usuario.jsp">Usuario</a></li>
 										<li><a href="tbl_rol.jsp">Rol</a></li>
-										<li><a href="tbl_opciones.jsp">Opciones</a></li>
+										<li><a href="tbl_opcion.jsp">Opciones</a></li>
 										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
 										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
 									</ul>
@@ -71,7 +71,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador">Facilitador</a></li>
+										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
 									</ul>
 								</li>
@@ -87,7 +87,7 @@
 									<ul class="nav child_menu">
 										<li><a href="rpt_general.jsp">General</a></li>
 										<li><a href="rpt_docCap.jsp">Docentes Capacitados</a></li>
-										<li><a href="rpt_docEv">Docentes por Evaluacion</a></li>
+										<li><a href="rpt_docEv.jsp">Docentes por Evaluacion</a></li>
 										<li><a href="rpt_docCertif.jsp">Docentes Certificados</a></li>
 									</ul>
 								</li>
@@ -98,11 +98,15 @@
 										<li><a href="tbl_evaluar.jsp">Evaluar </a></li>
 									</ul>
 								</li>
-							</ul>
-						</div>
-						
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                           
+                            <ul class="nav side-menu">
+                                 </ul>
+                        </div>
 
-					</div>
+                    </div>
                     <!-- /sidebar menu -->
 
                 </div>
