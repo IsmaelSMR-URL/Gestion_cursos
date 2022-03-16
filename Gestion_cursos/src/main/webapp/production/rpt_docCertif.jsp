@@ -170,7 +170,7 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Año: <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<select id="year" name="year" class="form-control" >
+                                            	<select id="year" name="year" class="form-control js-example-basic-single" >
                                             		<option value="0">...Seleccione</option>
 													<% for(Oferta vc: listaCap){ %>
 													<option value="<%=(vc.getFecha_inicial().getYear()+1900)%>"> <%=(vc.getFecha_inicial().getYear()+1900) %> </option>
@@ -183,7 +183,7 @@
 											<label class="col-form-label col-md-3 col-sm-3  label-align">Periodo<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<select id="periodo" name="periodo" class="form-control">
+												<select id="periodo" name="periodo" class="form-control js-example-basic-single">
 													<option value="0">...Seleccione</option>
 													<% for(Oferta vc: listaCap){ %>
 														
@@ -197,7 +197,7 @@
 											<label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<select id="sexo" name="sexo" class="form-control">
+												<select id="sexo" name="sexo" class="form-control js-example-basic-single">
 													<option value="">...Seleccione</option>
 													<option value="0">Femenino</option>
 													<option value="1">Masculino</option>
@@ -209,7 +209,7 @@
 											<label class="col-form-label col-md-3 col-sm-3  label-align">Facultad<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<select id="facultad" name="facultad" class="form-control">
+												<select id="facultad" name="facultad" class="form-control js-example-basic-single">
 													<option value="0">...Seleccione</option>
 													<% for(Facultad f: listaFac){ %>
 														
@@ -223,7 +223,7 @@
 											<label class="col-form-label col-md-3 col-sm-3  label-align">Departamento<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<select id="depto" name="depto" class="form-control">
+												<select id="depto" name="depto" class="form-control js-example-basic-single">
 													<option value="0">...Seleccione</option>
 													<option value="1">depto</option>
 													<option value="2">depto2</option>
@@ -235,7 +235,7 @@
 											<label class="col-form-label col-md-3 col-sm-3  label-align">Carrera<span class="required">*</span>
 											</label>
 											<div class="col-md-6 col-sm-6">
-												<select id="carrera" name="carrera" class="form-control">
+												<select id="carrera" name="carrera" class="form-control js-example-basic-single">
 													<option value="0">...Seleccione</option>
 													<% for(Carrera c: listaCar){ %>
 														
@@ -281,6 +281,10 @@
     
     <!-- Javascript functions	-->
 	<script>
+	$(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+	
 		function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -341,12 +345,6 @@
     <!-- Select2 -->
     <script src="../vendors/select2/dist/js/select2.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-    
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-    </script>
 
 </body>
 </html>
