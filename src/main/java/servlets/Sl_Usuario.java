@@ -48,7 +48,7 @@ public class Sl_Usuario extends HttpServlet{
 		Us.setId_uca(request.getParameter("idU"));
 		Us.setNombre_real(request.getParameter("name"));
 		Us.setNombre_usuario(request.getParameter("username"));
-		Us.setTelefono_contacto(request.getParameter("Telephone"));
+		Us.setTelefono_contacto(request.getParameter("telephone"));
 		Us.setCorreo_institucional(request.getParameter("insEmail"));
 		Us.setCorreo_personal(request.getParameter("persEmail"));
 		int sex= Integer.parseInt(request.getParameter("sexo"));
@@ -57,7 +57,7 @@ public class Sl_Usuario extends HttpServlet{
 		Us.setPwd(request.getParameter("pwd"));
 		int fac = Integer.parseInt(request.getParameter("facultad"));
 		Us.setId_facultad(fac);
-		int dept = Integer.parseInt(request.getParameter("departamento"));
+		int dept = Integer.parseInt(request.getParameter("depto"));
 		Us.setId_departamento(dept);
 		int car = Integer.parseInt(request.getParameter("carrera"));
 		Us.setId_carrera(car);

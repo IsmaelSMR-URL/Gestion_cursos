@@ -1,3 +1,10 @@
+<%@page import="entidades.Usuario"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.Usuario, datos.*, java.util.*;"%>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,40 +200,55 @@
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
+												
+												<%
+											
+												ArrayList<Usuario > listaUs = new ArrayList<Usuario>();
+												Dt_usuario dtu = new Dt_usuario ();
+												listaUs = dtu.listaUs_id();
+												%>
 												<thead>
 													<tr>
 														
 														<th>Id Uca</th>
 														<th>Nombre Real</th>
 														<th>Nombre Usuario</th>
-														<th>Sexo</th>
-															<th>Telefono</th>
-														<th>Correo Personal</th>
+														<th>Telefono</th>
 														<th>Correo institucional</th>
-														<th>Fecha de Registro</th>
-													
-														<th>Cargo</th>
-														<th>Acciones</th>
+														<th>Correo Personal</th>
+														<th>Facultad</th>
+														<th>Departamento</th>
+														<th>Carrera</th>
+														<th>Estado</th>
+													<th>Acciones</th>
 													</tr>
 												</thead>
 
 
 												<tbody>
-													<%
-													for (int i = 0; i < 5; i++) {
+												<%
+													
+													for (Usuario tUs : listaUs) {
+														String estado = "";
+														if (tUs.getEstado() != 3) {
+															estado = "Activa";
+														} else {
+															estado = "Modificada";
+														}
 													%>
 													<tr>
-														
-														<td>Id Uca</td>
-														<td>Nombre Real</td>
-														<td>Nombre Usuario</td>
-														<td>Sexo</td>
-														<td>Telefono</td>
-														<td>Correo Personal</td>
-														<td>Correo institucional</td>
-														<td>Fecha de Registro</td>
-														<td>Cargo</td>
-														
+														<td><%=tUs.getId_uca()%></td>
+														<td><%=tUs.getNombre_real()%></td>
+														<td><%= tUs.getNombre_usuario() %></td>
+														<td><%= tUs.getTelefono_contacto() %></td>
+														<td><%= tUs.getCorreo_personal() %></td>
+														<td><%= tUs.getCorreo_institucional() %></td>
+														<td><%= tUs.getNombre_facultad() %></td>
+														<td><%= tUs.getNombre_departamento() %></td>
+														<td><%= tUs.getNombre_carrera() %></td>
+														<td><%=estado %></td>
+
+
 														<td>
 															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Usuario"></i></a> 
 															<a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar Usuario"></i></a> 
@@ -244,12 +266,13 @@
 														<th>Id Uca</th>
 														<th>Nombre Real</th>
 														<th>Nombre Usuario</th>
-														<th>Sexo</th>
 														<th>Telefono</th>
-														<th>Correo Personal</th>
 														<th>Correo institucional</th>
-														<th>Fecha de Registro</th>
-														<th>Cargo</th>
+														<th>Correo Personal</th>
+														<th>Facultad</th>
+														<th>Departamento</th>
+														<th>Carrera</th>
+														<th>Estado</th>
 														<th>Acciones</th>
 													</tr>
 												</tfoot>

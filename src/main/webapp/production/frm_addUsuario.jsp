@@ -1,3 +1,7 @@
+<%@page import="entidades.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,84 +177,150 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
-<!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
-<!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
+                                    <form class="" action="../Sl_Usuario" method="post" novalidate>
+                                       <input type="hidden" value="1" name="opcion" id="opcion"/>
+
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id Uca <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control"  name="idU" placeholder="..."  />
+										
+                                            </div>
+                                        </div>
+                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre Real <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="name" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="name" placeholder="..."  />
 										
                                             </div>
                                         </div>
+                                        
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de Usuario <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="username" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="username" placeholder="..."  />
 										
                                             </div>
                                         </div>
+                                        
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Contraseña<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="gender" placeholder="Primer Semestre 2020"  />
+                                            	<input type="password" class="form-control"  name="pwd" placeholder="..."  />
 										
                                             </div>
                                         </div>
+                                        
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Telefono <span class="required">*</span></label>
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cargo<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="telephone" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="cargo" placeholder="..."  />
+										
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                         <%
+									ArrayList<Facultad> listaFac= new ArrayList<Facultad>();
+									Dt_Facultad dtf = new Dt_Facultad();
+									listaFac = dtf.listaFacActivos();
+
+											%>
+                                        
+                                          <div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Facultad<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="facultad" name="facultad" class="form-control js-example-basic-single">
+													<option value="0">...Seleccione</option>
+													<% for(Facultad f: listaFac){ %>
+														
+													<option value="<%=f.getId_facultad() %>"> <%=f.getNombre_facultad() %> </option>
+													<%} %>
+												</select>
+											</div>
+										</div>
+                                         
+                                        <%
+
+									ArrayList<Departamento> listaDep= new ArrayList<Departamento>();
+									Dt_Departamento dtd = new Dt_Departamento();
+									listaDep = dtd.listaDepActivos();
+                                               %>
+                                               
+                                           <div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align ">Departamento<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="depto" name="depto" class="form-control js-example-basic-single">
+													<option value="0">...Seleccione</option>
+													<% for(Departamento d: listaDep){ %>
+													<option value="<%=d.getId_departamento()%>"><%=d.getNombre_departamento()%></option>
+													<%} %>
+												</select>
+											</div>
+										</div>
+                                        
+                                        <%
+
+									ArrayList<Carrera> listaCar= new ArrayList<Carrera>();
+									Dt_carrera dtc = new Dt_carrera();
+									listaCar = dtc.listaCarActivos();
+                                               %>
+                                         
+                                           <div class="field item form-group">
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Carrera<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="carrera" name="carrera" class="form-control js-example-basic-single">
+													<option value="0">...Seleccione</option>
+													<% for(Carrera c: listaCar){ %>
+														
+													<option value="<%=c.getId_carrera() %>"> <%=c.getNombre_carrera() %> </option>
+													<%} %>
+												</select>
+											</div>
+										</div>
+                                        
+                                     
+                                     	<div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Correo Institucional<span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control"  name="insEmail" placeholder="..."  />
 										
                                             </div>
                                         </div>
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Correo Personal <span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="persEmail" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="persEmail" placeholder="..."  />
+										
+                                            </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Telefono <span class="required">*</span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control"  name="telephone" placeholder="..."  />
 										
                                             </div>
                                         </div>
                                         
                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Correo Intitucional<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="insEmail" placeholder="Primer Semestre 2020"  />
-										
-                                            </div>
-                                        </div>
-                                        
-                                          <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Contraseña<span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="insEmail" placeholder="Primer Semestre 2020"  />
-										
-                                            </div>
-                                        </div>
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Cargo <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="charge" placeholder="Primer Semestre 2020"  />
-										
-                                            </div>
-                                        </div>
-                                        
-                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Estado: <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" disabled>
-													<option value="1">Activo</option>
-													<option value="2">Modificado</option>
-													<option value="3">Eliminado</option>
+											<label class="col-form-label col-md-3 col-sm-3  label-align">Sexo<span class="required">*</span>
+											</label>
+											<div class="col-md-6 col-sm-6">
+												<select id="sexo" name="sexo" class="form-control js-example-basic-single">
+													<option value="">...Seleccione</option>
+													<option value="0">Femenino</option>
+													<option value="1">Masculino</option>
 												</select>
-                                        
-                                        </div>
-                                        </div>
-                                  
-                                        </div>
-                                        <div class="ln_solid">
+											</div>
+										</div>
+										
+                                     <div class="ln_solid">
                                             <div class="form-group">
+                                             
                                                 <div class="col-md-6 offset-md-3">
                                                     <button type='submit' class="btn btn-primary">Guardar</button>
                                                     <button type='reset' class="btn btn-success">Cancelar</button>
@@ -262,7 +332,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+              
             </div>
             <!-- /page content -->
 
@@ -284,6 +354,9 @@
     
     <!-- Javascript functions	-->
 	<script>
+	$(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
 		function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -346,9 +419,7 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
+    
     </script>
 
 </body>

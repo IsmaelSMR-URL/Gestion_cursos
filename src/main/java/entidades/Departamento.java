@@ -5,6 +5,7 @@ public class Departamento {
 	private String nombre_departamento;
 	private int estado;
 	private int id_facultad;
+	private String nombre_facultad;
 	
 	public int getId_departamento() {
 		return id_departamento;
@@ -29,6 +30,12 @@ public class Departamento {
 	}
 	public void setId_facultad(int id_facultad) {
 		this.id_facultad = id_facultad;
+	}
+	public String getNombre_facultad() {
+		return nombre_facultad;
+	}
+	public void setNombre_facultad(String nombre_facultad) {
+		this.nombre_facultad = nombre_facultad;
 	}
 	
 	

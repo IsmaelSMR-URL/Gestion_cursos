@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Me quiero matar</title>
+<title>Gestion de Cursos | Departamentos</title>
 
 <!-- Bootstrap -->
 <link href="../vendors/bootstrap/dist/css/bootstrap.min.css"
@@ -248,6 +248,9 @@
     
     <!-- Javascript functions	-->
 	<script>
+	$(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
 		function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -310,9 +313,7 @@
 <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
     
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
+    
     </script>
 
 </body>

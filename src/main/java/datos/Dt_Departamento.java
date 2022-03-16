@@ -31,12 +31,13 @@ public class Dt_Departamento {
 		ArrayList<Departamento> listDep = new ArrayList<Departamento>();
 		try{
 			c = poolConexion.getConnection(); //obtenemos una conexion del pool
-			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.Departamento;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+			ps = c.prepareStatement("SELECT * FROM gc_mcgofe.vw_departamento;", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Departamento Dep = new Departamento (); //instanciamos a Departamento
 				Dep.setNombre_departamento(rs.getString("nombre_departamento"));
 				Dep.setId_facultad(rs.getInt("id_facultad"));
+				Dep.setNombre_facultad(rs.getString("nombre_facultad"));
 				Dep.setEstado(rs.getInt("estado"));
 				
 

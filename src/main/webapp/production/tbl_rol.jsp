@@ -160,7 +160,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3> Gestion de Rols </h3>
+							<h3> Gestion de Roles </h3>
 						</div>
 
 						<div class="title_right">
@@ -180,7 +180,7 @@
 					<div class="col-md-12 col-sm-12 ">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2> Rols Registrados </h2>
+								<h2> Roles Registrados </h2>
 								
 								<div class="clearfix"></div>
 							</div>
@@ -228,9 +228,8 @@
 													<tr>
 														
 														<td><%=tRol.getNombre_rol() %></td>
-														<td><%=tRol.getEstado() %></td>
 														<td><%=tRol.getDescripcion() %></td>
-													
+														<td><%=estado%></td>													
 														
 														<td>
 															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Rol"></i></a> 

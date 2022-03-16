@@ -10,7 +10,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>DataTables | Me quiero morir</title>
+<title>Gestion de Cursos | Departamento</title>
 
 <!-- Bootstrap -->
 <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
@@ -214,8 +214,8 @@
 												<thead>
 													<tr>
 														<th>Departamento</th>
+														<th>Facultad</th>
 														<th>Estado</th>
-														<th>ID Facultad</th>
 														<th>Acciones</th>
 													</tr>
 												</thead>
@@ -234,8 +234,8 @@
 													<tr>
 														
 														<td><%=tDep.getNombre_departamento() %></td>
-														<td><%=tDep.getEstado() %></td>
-														<td><%=tDep.getId_facultad() %></td>
+														<td><%=tDep.getNombre_facultad() %></td>
+														<td><%=estado%></td>
 														
 														<td>
 															<a href="" target="blank"><i class="fa fa-2x fa-edit" title="Modificar Departamento"></i></a> 
@@ -252,8 +252,8 @@
 												<tfoot>
 													<tr>
 														<th>Departamento</th>
+														<th>Facultad</th>
 														<th>Estado</th>
-														<th>ID Facultad</th>
 														<th>Acciones</th>
 														
 													</tr>

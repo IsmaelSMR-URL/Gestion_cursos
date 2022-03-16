@@ -1,6 +1,6 @@
-<%@page import="entidades.Modalidad"%>
+<%@page import="entidades.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="entidades.Modalidad, datos.*, java.util.*;"%>
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 
 
 <!DOCTYPE html>
@@ -210,7 +210,7 @@
 														
 															<th>Id </th>
 														<th>Nombre </th>
-														<th>Certicada</th>
+														<th>Estilo</th>
 														<th>Descripcion</th>
 														<th>Estado</th>
 													    <th>Acciones</th>
@@ -223,17 +223,24 @@
 													
 													for (Modalidad tMod : listaMod) {
 														String estado = "";
+														String certificado="";
 														if (tMod.getEstado() != 3) {
 															estado = "Activa";
 														} else {
 															estado = "Modificada";
+														}
+
+														if(tMod.getCertificada() ==0){
+															certificado = "Es certificada";
+														}else{
+															certificado = "No se certifica";
 														}
 													%>
 													<tr>
 													
 													  <td><%=tMod.getId_modalidad()%></td>
 													  <td><%=tMod.getNombre_modalidad()%></td>
-													  <td><%= tMod.getCertificada() %></td>
+													  <td><%=certificado%></td>
 													  <td><%= tMod.getDescripcion() %></td>
 													  <td><%=estado %></td>
 														
@@ -255,7 +262,7 @@
 													<tr>
 													     <th>Id </th>
 														<th>Nombre</th>
-														<th>Certificada Real</th>
+														<th>Estilo</th>
 														<th>Descripcion</th>
 														<th>Acciones</th>
 													</tr>
