@@ -1,13 +1,12 @@
 package entidades;
 
-import java.sql.Date;
 
 
 
 public class Inscripcion {
 
 	private int id_inscripcion;
-	private Date fecha_inscripcion;
+	private String ano_inscripcion;
 	private int estado;
 	private int id_carrera;
 	private int id_departamento;
@@ -15,18 +14,17 @@ public class Inscripcion {
 	private int id_usuario;
 	private int id_escala;
 	private int id_oferta_detalle;
-	
 	public int getId_inscripcion() {
 		return id_inscripcion;
 	}
 	public void setId_inscripcion(int id_inscripcion) {
 		this.id_inscripcion = id_inscripcion;
 	}
-	public Date getFecha_inscripcion() {
-		return fecha_inscripcion;
+	public String getAno_inscripcion() {
+		return ano_inscripcion;
 	}
-	public void setFecha_inscripcion(Date fecha_inscripcion) {
-		this.fecha_inscripcion = fecha_inscripcion;
+	public void setAno_inscripcion(String ano_inscripcion) {
+		this.ano_inscripcion = ano_inscripcion;
 	}
 	public int getEstado() {
 		return estado;
@@ -70,6 +68,8 @@ public class Inscripcion {
 	public void setId_oferta_detalle(int id_oferta_detalle) {
 		this.id_oferta_detalle = id_oferta_detalle;
 	}
+	
+	
 	
 	
 	

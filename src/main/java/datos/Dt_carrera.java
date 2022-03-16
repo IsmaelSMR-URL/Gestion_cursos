@@ -76,6 +76,7 @@ public class Dt_carrera {
 			this.llena_rsCarrera(c);
 			this.rsCarrera.moveToInsertRow();
 			rsCarrera.updateString("nombre_carrera", ca.getNombre_carrera());
+			rsCarrera.updateInt("id_departamento", ca.getId_departamento());
 			rsCarrera.updateInt("estado", 1);
 			rsCarrera.insertRow();
 			rsCarrera.moveToCurrentRow();

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
+    pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gestion de Cursos | Capacitacion </title>
+    <title>Gestión | User->Rol </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,26 +32,30 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Dpto. Educacion</span></a>
                     </div>
 
                     <div class="clearfix"></div>
 
-                    
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                       
+                    </div>
+                    <!-- /menu profile quick info -->
 
                     <br />
 
                     <!-- sidebar menu -->
-                    <div id="sidebar-menu"
-						class="main_menu_side hidden-print main_menu">
-						<div class="menu_section">
-							<ul class="nav side-menu">
-								<li><a><i class="fa fa-shield"></i> Seguridad <span
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                  <li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="tbl_usuario.jsp">Usuario</a></li>
 										<li><a href="tbl_rol.jsp">Rol</a></li>
-										<li><a href="tbl_opciones.jsp">Opciones</a></li>
+										<li><a href="tbl_opcion.jsp">Opciones</a></li>
 										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
 										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
 									</ul>
@@ -98,36 +102,41 @@
 										<li><a href="tbl_evaluar.jsp">Evaluar </a></li>
 									</ul>
 								</li>
-							</ul>
-						</div>
-						
+                            </ul>
+                        </div>
+                        <div class="menu_section">
+                           
+                            <ul class="nav side-menu">
+                                  </ul>
+                        </div>
 
-					</div>
+                    </div>
                     <!-- /sidebar menu -->
 
-                   
+                    <!-- /menu footer buttons -->
+                    
+                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
             <!-- top navigation -->
             <div class="top_nav">
-				<div class="nav_menu">
-					<div class="nav toggle">
-						<a id="menu_toggle"><i class="fa fa-bars"></i></a>
-					</div>
-					<nav class="nav navbar-nav">
-						<ul class=" navbar-right">
-							<li>
+                <div class="nav_menu">
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <nav class="nav navbar-nav">
+                        <ul class=" navbar-right">
+                             <li>
 								<a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión"
 								href="login.html"> <span class="glyphicon glyphicon-off fa-2x"
 								aria-hidden="true"></span>
 								</a>
 							</li>
-							
-						</ul>
-					</nav>
-				</div>
-			</div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
             <!-- /top navigation -->
 
             <!-- page content -->
@@ -135,11 +144,11 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Visualizar Capacitacion</h3>
+                            <h3>Carrera</h3>
                         </div>
 
                         <div class="title_right">
-                          
+                           
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -148,8 +157,20 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Visualizar una capacitacion </h2>
-                                    
+                                    <h2>Visualizar Carrera </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -157,36 +178,42 @@
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de la Capacitacion: <span class="required">*</span></label>
+										<div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Id: <span class="required"></span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="ex. John f. Kennedy" required="required" />
+                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="descripcion" placeholder="" readonly />
 										
                                             </div>
                                         </div>
-                                       <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Modalidad <span class="required">*</span></label>
+                                        
+ 										<div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre: <span class="required"></span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<% 
-													ArrayList<Modalidad> listaCap = new ArrayList<Modalidad>();
-													Dt_Modalidad dtu = new Dt_Modalidad();
-													listaCap = dtu.listaModActivos();
-												%>
-													
-                                            	<select id="modalidad" name="modalidad" class="form-control js-example-basic-single" >
-													<option value="">...Seleccione</option>
-													
-													<% for(Modalidad vc: listaCap){ %>
-														
-													<option value="<%=vc.getId_modalidad()%>"><%=vc.getNombre_modalidad() %></option>
-													<%} %>
-												</select>
+                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="descripcion" placeholder="" readonly />
+										
                                             </div>
                                         </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Departamento: <span class="required"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="descripcion" placeholder="" readonly />
+										
+                                            </div>
+                                        </div>
+                                        
+                                       
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Estado: <span class="readonly"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+                                            	<input class="form-control" data-validate-length-range="6" data-validate-words="2" name="descripcion" placeholder="" readonly  />
+										
+                                            </div>
+                                        </div>                                                                          
                                         <div class="ln_solid">
                                             <div class="form-group">
                                                 <div class="col-md-6 offset-md-3">
-                                                    
+                                                    <button type='submit' class="btn btn-primary">Volver</button>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
@@ -201,11 +228,11 @@
 
             <!-- footer content -->
             <footer>
-				<div class="pull-right">
-					Gestion de Capacitacion Docente - UCA
-				</div>
-				<div class="clearfix"></div>
-			</footer>
+                <div class="pull-right">
+                 	Gestion de Cursos - Mc.Gofe 
+                </div>
+                <div class="clearfix"></div>
+            </footer>
             <!-- /footer content -->
         </div>
     </div>
@@ -217,10 +244,6 @@
     
     <!-- Javascript functions	-->
 	<script>
-	$(document).ready(function() {
-        $('.js-example-basic-single').select2();
-    });
-	
 		function hideshow(){
 			var password = document.getElementById("password1");
 			var slash = document.getElementById("slash");
@@ -236,6 +259,7 @@
 				slash.style.display = "none";
 				eye.style.display = "block";
 			}
+
 		}
 	</script>
 
@@ -262,6 +286,7 @@
             if (this.checked)
                 $('form .alert').remove();
         }).prop('checked', false);
+
     </script>
 
     <!-- jQuery -->
@@ -281,7 +306,12 @@
     <!-- Select2 -->
     <script src="../vendors/select2/dist/js/select2.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+    </script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.*;" %>
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gestion de Cursos | Facultad </title>
+    <title>Gestión | Inscripciones </title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,13 +32,15 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Dpto. Educacion</span></a>
                     </div>
 
                     <div class="clearfix"></div>
 
                     <!-- menu profile quick info -->
-                    
+                    <div class="profile clearfix">
+                       
+                    </div>
                     <!-- /menu profile quick info -->
 
                     <br />
@@ -46,14 +48,14 @@
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
-                            
+                            <h3>General</h3>
                             <ul class="nav side-menu">
-								<li><a><i class="fa fa-shield"></i> Seguridad <span
+                               <li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="tbl_usuario.jsp">Usuario</a></li>
 										<li><a href="tbl_rol.jsp">Rol</a></li>
-										<li><a href="tbl_opciones.jsp">Opciones</a></li>
+										<li><a href="tbl_opcion.jsp">Opciones</a></li>
 										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
 										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
 									</ul>
@@ -100,9 +102,20 @@
 										<li><a href="tbl_evaluar.jsp">Evaluar </a></li>
 									</ul>
 								</li>
-							</ul>
+                            </ul>
                         </div>
+                        <div class="menu_section">
+                        
+                            <ul class="nav side-menu">
+                              </ul>
+                        </div>
+
                     </div>
+                    <!-- /sidebar menu -->
+
+                    <!-- /menu footer buttons -->
+                  
+                    <!-- /menu footer buttons -->
                 </div>
             </div>
 
@@ -114,13 +127,12 @@
                     </div>
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
-                            <li style="padding-left: 15px;">
+                        <li>
 								<a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión"
 								href="login.html"> <span class="glyphicon glyphicon-off fa-2x"
 								aria-hidden="true"></span>
 								</a>
-                                
-                            </li>
+							</li>
                         </ul>
                     </nav>
                 </div>
@@ -132,11 +144,11 @@
                 <div class="">
                     <div class="page-title">
                         <div class="title_left">
-                            <h3>Visualizar Facultad</h3>
+                            <h3>Incripciones</h3>
                         </div>
 
                         <div class="title_right">
-                            
+                           
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -145,21 +157,139 @@
                         <div class="col-md-12 col-sm-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Visualizar una facultad existente</h2>
-                                    
+                                    <h2>Modificar Inscripcion </h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="#">Settings 1</a>
+                                                <a class="dropdown-item" href="#">Settings 2</a>
+                                            </div>
+                                        </li>
+                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
                                     <form class="" action="" method="post" novalidate>
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
-<!--                                         <span class="section">Personal Info</span> -->
-                                        <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Nombre de la facultad: <span class="required">*</span></label>
+<!--                                         <span class="section">Personal Info</span> -->						
+ 									
+<!--                                                 <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div> -->
+												<div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Usuario: <span class="required"></span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input readonly class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="Facultad" required="required" />
-										
+<!--                                                 <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div> -->
+												<%
+							                      	ArrayList<Usuario> listRol = new ArrayList<Usuario>();
+							                      	Dt_usuario dtr = new Dt_usuario();
+							                      	listRol = dtr.listaUs_id();
+								                 %>
+								                 <select class="form-control js-example-basic-single" name="cbxUsuario" id="cbxUsuario" required="required">
+												  <option value="">Seleccione...</option>
+												  <% 
+												  	for(Usuario trol :listRol){
+												  %>
+												  <option value="<%=trol.getId_usuario() %>"><%=trol.getNombre_real() %></option>
+												  <%
+												  	}
+												  %>
+												
+												</select>
+											</div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Carrera: <span class="required"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+<!--                                            <input class="form-control" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="ex. John f. Kennedy" required="required" /> -->
+												<%
+							                      	ArrayList<Carrera> listaCarrera = new ArrayList<Carrera>();
+							                      	Dt_carrera dtu = new Dt_carrera();
+							                      	listaCarrera = dtu.listaCarActivos();
+								                 %>
+												<select class="form-control js-example-basic-single" name="cbxCarrera" id="cbxCarrera" required="required">
+												  <option value="">Seleccione...</option>
+											  <% 
+												  	for(Carrera tu :listaCarrera){
+												  %>
+												  <option value="<%=tu.getId_carrera()%>"><%=tu.getNombre_carrera()%></option>
+												  <%
+												  	}
+												  %>
+												  
+												</select>
                                             </div>
+                                        </div>
+                                        <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Departamento: <span class="required"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+<!--                                                 <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div> -->
+												<%
+							                      	ArrayList<Departamento> listRol2 = new ArrayList<Departamento>();
+							                      	Dt_Departamento dtr2 = new Dt_Departamento();
+							                      	listRol2 = dtr2.listaDepActivos();
+								                 %>
+								                 <select class="form-control js-example-basic-single" name="cbxDepartamento" id="cbxDepartamento" required="required">
+												  <option value="">Seleccione...</option>
+												  <% 
+												  	for(Departamento trol :listRol2){
+												  %>
+												  <option value="<%=trol.getId_departamento() %>"><%=trol.getNombre_departamento()%></option>
+												  <%
+												  	}
+												  %>
+												  
+												</select>
+											</div>
+                                        </div>
+                                         <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Facultad: <span class="required"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+<!--                                                 <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div> -->
+												<%
+							                      	ArrayList<Facultad> listaFacultad = new ArrayList<Facultad>();
+							                      	Dt_Facultad dtfac = new Dt_Facultad();
+							                      	listaFacultad = dtfac.listaFacActivos();
+								                 %>
+								                 <select class="form-control js-example-basic-single" name="cbxFacultad" id="cbxFacultad" required="required">
+												  <option value="">Seleccione...</option>
+												  <% 
+												  	for(Facultad trol :listaFacultad){
+												  %>
+												  <option value="<%=trol.getId_facultad()%>"><%=trol.getNombre_facultad()%></option>
+												  <%
+												  	}
+												  %>
+												  
+												</select>
+											</div>
+                                        </div>                                     
+                                        
+                                         <div class="field item form-group">
+                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Oferta: <span class="required"></span></label>
+                                            <div class="col-md-6 col-sm-6">
+<!--                                                 <input class="form-control" class='optional' name="occupation" data-validate-length-range="5,15" type="text" /></div> -->
+												<%
+							                      	ArrayList<Oferta_Detalle> listaOferta = new ArrayList<Oferta_Detalle>();
+							                      	Dt_Oferta_Det dt = new Dt_Oferta_Det();
+							                      	listaOferta = dt.listaODActivos();
+								                 %>
+								                 <select class="form-control js-example-basic-single" name="cbxOfertaDetalle" id="cbxOfertaDetalle" required="required">
+												  <option value="">Seleccione...</option>
+												  <% 
+												  	for(Oferta_Detalle trol :listaOferta){
+												  %>
+												  <option value="<%=trol.getId_oferta_detalle()%>"><%=trol.getId_oferta_detalle()%></option>
+												  <%
+												  	}
+												  %>
+												 
+												</select>
+											</div>
                                         </div>
                                         <div class="ln_solid">
                                             <div class="form-group">
@@ -169,6 +299,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                     </form>
                                 </div>
                             </div>
@@ -179,12 +310,11 @@
             <!-- /page content -->
 
             <!-- footer content -->
-           <footer>
-				<div class="pull-right">
-					Gestion de Capacitacion Docente - UCA
-				</div>
-				<div class="clearfix"></div>
-			</footer>
+            <footer>
+                <div class="pull-right">
+	Gestion de Cursos - Mc.Gofe                 </div>
+                <div class="clearfix"></div>
+            </footer>
             <!-- /footer content -->
         </div>
     </div>
@@ -211,6 +341,7 @@
 				slash.style.display = "none";
 				eye.style.display = "block";
 			}
+
 		}
 	</script>
 
@@ -237,6 +368,7 @@
             if (this.checked)
                 $('form .alert').remove();
         }).prop('checked', false);
+
     </script>
 
     <!-- jQuery -->

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import entidades.Opcion;
 
+
 public class Dt_opcion {
 
 	poolConexion pc = poolConexion.getInstance(); 
@@ -44,7 +45,7 @@ public class Dt_opcion {
 			}
 		}
 		catch (Exception e){
-			System.out.println("DATOS: ERROR EN LISTAR Opcions: "+ e.getMessage());
+			System.out.println("DATOS: ERROR EN LISTAR Opcion: "+ e.getMessage());
 			e.printStackTrace();
 		}
 		finally{
@@ -68,21 +69,22 @@ public class Dt_opcion {
 		return listop;
 	}
 	
-	public boolean addOpcion(Opcion ca){
+	public boolean addOpcion(Opcion tur){
 		boolean guardado = false;
 		
 		try{
 			c = poolConexion.getConnection();
 			this.llena_rsOpcion(c);
 			this.rsOpcion.moveToInsertRow();
-			rsOpcion.updateString("nombre_opcion", ca.getNombre_opcion());
+			rsOpcion.updateString("nombre_opcion", tur.getNombre_opcion());
+			rsOpcion.updateString("descripcion", tur.getDescripcion());
 			rsOpcion.updateInt("estado", 1);
 			rsOpcion.insertRow();
 			rsOpcion.moveToCurrentRow();
 			guardado = true;
 		}
 		catch (Exception e) {
-			System.err.println("ERROR AL GUARDAR Opcion: "+e.getMessage());
+			System.err.println("ERROR AL GUARDAR Opcion "+e.getMessage());
 			e.printStackTrace();
 		}
 		finally{
@@ -102,4 +104,5 @@ public class Dt_opcion {
 		
 		return guardado;
 	}
+
 }

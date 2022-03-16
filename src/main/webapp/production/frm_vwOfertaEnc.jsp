@@ -308,7 +308,7 @@
 			<!-- footer content -->
 			<footer>
 				<div class="pull-right">
-					Gestion de Cursos - Mc.Gofe 
+					Gestion de Capacitacion Docente - UCA
 				</div>
 				<div class="clearfix"></div>
 			</footer>
