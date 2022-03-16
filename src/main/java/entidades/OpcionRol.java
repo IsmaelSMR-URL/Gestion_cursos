@@ -3,7 +3,9 @@ package entidades;
 public class OpcionRol {
 	private int id_opcion_rol;
 	private int id_opcion;
+	private String nombre_opcion;
 	private int id_rol;
+	private String nombre_rol;
 	
 	
 	public int getId_opcion_rol() {
@@ -24,6 +26,17 @@ public class OpcionRol {
 	public void setId_rol(int id_rol) {
 		this.id_rol = id_rol;
 	}
-
-	
+	public String getNombre_opcion() {
+		return nombre_opcion;
+	}
+	public void setNombre_opcion(String nombre_opcion) {
+		this.nombre_opcion = nombre_opcion;
+	}
+	public String getNombre_rol() {
+		return nombre_rol;
+	}
+	public void setNombre_rol(String nombre_rol) {
+		this.nombre_rol = nombre_rol;
+	}
+		
 }

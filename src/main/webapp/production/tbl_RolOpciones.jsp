@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
+	
 <!DOCTYPE html>
 <html>
   <head>
@@ -175,7 +176,6 @@
 	                  %>
                       <thead>
                         <tr>
-                          <th>Id</th>
                           <th>Rol</th>
                           <th>Opción</th>
                           <th>Acciones</th>
@@ -186,13 +186,13 @@
                       for (OpcionRol tor : listaOpcionRol) {
                       %>
                         <tr>
-                          <td><%=tor.getId_opcion() %></td>
-                          <td><%=tor.getRol() %></td>
-                          <td><%=tor.getOpción() %></td>
+                          
+                          <td><%=tor.getNombre_rol() %></td>
+                          <td><%=tor.getNombre_opcion() %></td>
                           <td>
-							 <a href="frm_modOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-edit" title="Editar opciones asignada al rol"></i></a> 
-							 <a href="frm_vwOfertaEnc.jsp" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar opciones asignada al rol"></i></a> 
-							 <a href="frm_delOfertaEnc.jsp" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar opciones asignada al rol"></i></a>
+							 <a href="" target="blank"><i class="fa fa-2x fa-edit" title="Editar opciones asignada al rol"></i></a> 
+							 <a href="" target="blank"><i class="fa fa-eye fa-2x" title="Visualizar opciones asignada al rol"></i></a> 
+							 <a href="" target="blank"><i class="fa fa-2x fa-trash" title="Eliminar opciones asignada al rol"></i></a>
 						  </td>
                         </tr>
                         <%
@@ -201,7 +201,6 @@
                       </tbody>
                       <tfoot>
                         <tr>
-                           <th>Id</th>
                           <th>Rol</th>
                           <th>Opción</th>
                           <th>Acciones</th>
@@ -217,16 +216,16 @@
               </div>
             </div>
           </div>
-     
+        </div>
         <!-- /page content -->
 
         <!-- footer content -->
         <footer>
-				<div class="pull-right">
-					Gestion de Capacitacion Docente - UCA
-				</div>
-				<div class="clearfix"></div>
-			</footer>
+          <div class="pull-right">
+            Gestion de Cursos - Mc.Gofe 
+          </div>
+          <div class="clearfix"></div>
+        </footer>
         <!-- /footer content -->
       </div>
     </div>

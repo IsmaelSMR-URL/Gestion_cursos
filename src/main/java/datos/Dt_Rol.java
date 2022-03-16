@@ -34,6 +34,7 @@ public class Dt_Rol {
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Rol Rol = new Rol (); //instanciamos a Rol
+				Rol.setId_rol(rs.getInt("id_rol"));
 				Rol.setNombre_rol(rs.getString("nombre_Rol"));
 				Rol.setEstado(rs.getInt("estado"));
 				Rol.setDescripcion(rs.getString("descripcion"));

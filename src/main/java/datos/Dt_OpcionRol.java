@@ -31,17 +31,19 @@ public class Dt_OpcionRol {
 	
 	
 	//Metodo para visualizar usuarios registrados y activos
-		public ArrayList<OpcionRol> listaOpcRolActivos(int id){
+		public ArrayList<OpcionRol> listaOpcRolActivos(){
 			ArrayList<OpcionRol> listOpcRol = new ArrayList<OpcionRol>();
 			try{
 				c = poolConexion.getConnection(); //obtenemos una conexion del pool
-				ps = c.prepareStatement("SELECT * FROM gc_mcgofe.opcionrol WHERE id_opcion_rol = "+ id, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+				ps = c.prepareStatement("SELECT * FROM gc_mcgofe.vw_opcionrol", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				rs = ps.executeQuery();
 				while(rs.next()){
 					OpcionRol or = new OpcionRol(); //instanciamos a opcionrol
 					or.setId_opcion_rol(rs.getInt("id_opcion_rol"));
 					or.setId_opcion(rs.getInt("id_opcion"));
+					or.setNombre_opcion(rs.getString("nombre_opcion"));
 					or.setId_rol(rs.getInt("id_rol"));
+					or.setNombre_rol(rs.getString("nombre_rol"));
 					
 					listOpcRol.add(or);
 				}
@@ -80,7 +82,6 @@ public class Dt_OpcionRol {
 				this.llena_rsOpcionRol(c);
 				this.rsOpcionRol.moveToInsertRow();
 				
-				rsOpcionRol.updateInt("id_opcion_rol", op.getId_opcion_rol());
 				rsOpcionRol.updateInt("id_opcion", op.getId_opcion());
 				rsOpcionRol.updateInt("id_rol", op.getId_rol());
 				

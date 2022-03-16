@@ -42,7 +42,6 @@ public class Sl_OpcionRol extends HttpServlet {
 	 */
 	
 	
-	@SuppressWarnings("deprecation")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int opc = 0;
 		opc = Integer.parseInt(request.getParameter("opcion"));
@@ -59,9 +58,9 @@ public class Sl_OpcionRol extends HttpServlet {
 		case 1:
 			try {
 				if(dor.addOpcionRol(or)) {
-					response.sendRedirect("production/tbl_EscalaCalificacion.jsp?msj=1");
+					response.sendRedirect("production/tbl_RolOpciones.jsp?msj=1");
 				}else {
-					response.sendRedirect("production/tbl_EscalaCalificacion.jsp?msj=2");
+					response.sendRedirect("production/tbl_RolOpciones.jsp?msj=2");
 				}
 			}catch(Exception e) {
 				System.out.println("Error Sl_EscalaCalificacion: opc1"+e.getMessage());

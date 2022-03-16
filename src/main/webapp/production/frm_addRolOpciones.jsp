@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.*;" %>
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +70,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
+										<li><a href="tbl_facilitador">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
 									</ul>
 								</li>
@@ -86,7 +86,7 @@
 									<ul class="nav child_menu">
 										<li><a href="rpt_general.jsp">General</a></li>
 										<li><a href="rpt_docCap.jsp">Docentes Capacitados</a></li>
-										<li><a href="rpt_docEv.jsp">Docentes por Evaluacion</a></li>
+										<li><a href="rpt_docEv">Docentes por Evaluacion</a></li>
 										<li><a href="rpt_docCertif.jsp">Docentes Certificados</a></li>
 									</ul>
 								</li>
@@ -164,7 +164,7 @@
                                             <div class="col-md-6 col-sm-6">
                                             	<% 
 													ArrayList<Opcion> listaOpc = new ArrayList<Opcion>();
-													Dt_Opcion dto = new Dt_Opcion();
+													Dt_opcion dto = new Dt_opcion();
 													listaOpc = dto.listaopActivos();
 												%>
                                             	<select id="opcion" name="opcion" class="form-control js-example-basic-single">
@@ -183,11 +183,11 @@
                                             	<% 
 													ArrayList<Rol> listaRol = new ArrayList<Rol>();
 													Dt_Rol dtr = new Dt_Rol();
-													listaRol = dtr.listaRlActivos();
+													listaRol = dtr.listaRolActivos();
 												%>
                                             	<select id="rol" name="rol" class="form-control js-example-basic-single">
 													<option value="">...Seleccione</option>
-													<%for(Rol rl:listaRol){ %>
+													<%for(Rol rl: listaRol){ %>
 													<option value="<%=rl.getId_rol() %>"><%=rl.getNombre_rol() %></option>
 													<%} %>
 												</select>
