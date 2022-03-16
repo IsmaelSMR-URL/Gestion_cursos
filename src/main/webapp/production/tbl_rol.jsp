@@ -1,3 +1,6 @@
+<%@page import="entidades.Rol"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +65,7 @@
 
 					<br />
 
-					<!-- sidebar menu -->
+						<!-- sidebar menu -->
 					<div id="sidebar-menu"
 						class="main_menu_side hidden-print main_menu">
 						<div class="menu_section">
@@ -70,11 +73,11 @@
 								<li><a><i class="fa fa-shield"></i> Seguridad <span
 										class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="tbl_Rol.jsp">Rol</a></li>
-										<li><a href="tbl_Rol.jsp">Rol</a></li>
+										<li><a href="tbl_usuario.jsp">Usuario</a></li>
+										<li><a href="tbl_rol.jsp">Rol</a></li>
 										<li><a href="tbl_opciones.jsp">Opciones</a></li>
-										<li><a href="tbl_RolRol.jsp">Asignar Roles a Rol</a></li>
-										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los Roles</a></li>
+										<li><a href="tbl_UsuarioRol.jsp">Asignar roles a usuario</a></li>
+										<li><a href="tbl_RolOpciones.jsp">Asignar opciones a los roles</a></li>
 									</ul>
 								</li>
 								
@@ -124,6 +127,7 @@
 
 					</div>
 					<!-- /sidebar menu -->
+
 
 					
 				</div>
@@ -193,6 +197,13 @@
 											<table id="datatable-buttons"
 												class="table table-striped table-bordered"
 												style="width: 100%">
+												
+												<%
+												ArrayList<Rol> listaRol = new ArrayList<Rol>();
+												Dt_Rol dtu = new Dt_Rol();
+												listaRol = dtu.listaRolActivos();
+												%>
+												
 												<thead>
 													<tr>
 														
@@ -206,13 +217,19 @@
 
 												<tbody>
 													<%
-													for (int i = 0; i < 5; i++) {
+													for (Rol tRol : listaRol) {
+														String estado = "";
+														if (tRol.getEstado() != 3) {
+															estado = "Activa";
+														} else {
+															estado = "Modificada";
+														}
 													%>
 													<tr>
 														
-														<td>Nombre del Rol</td>
-														<td>Descripción</td>
-														<td>Estado</td>
+														<td><%=tRol.getNombre_rol() %></td>
+														<td><%=tRol.getEstado() %></td>
+														<td><%=tRol.getDescripcion() %></td>
 													
 														
 														<td>

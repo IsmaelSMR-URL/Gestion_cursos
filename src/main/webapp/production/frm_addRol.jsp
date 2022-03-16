@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="entidades.*, datos.*, java.util.*;"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -173,7 +175,9 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
-                                    <form class="" action="" method="post" novalidate>
+                                    <form class="" action="../Sl_Rol" method="post" novalidate>
+                                    <input type="hidden" value="1" name="opcion" id="opcion"/>
+                                    
 <!--                                         <p>For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a> -->
 <!--                                         </p> -->
 <!--                                         <span class="section">Personal Info</span> -->
@@ -187,21 +191,11 @@
                                         <div class="field item form-group">
                                             <label class="col-form-label col-md-3 col-sm-3  label-align">Descripción<span class="required">*</span></label>
                                             <div class="col-md-6 col-sm-6">
-                                            	<input class="form-control"  name="username" placeholder="Primer Semestre 2020"  />
+                                            	<input class="form-control"  name="descripcion" placeholder="Primer Semestre 2020"  />
 										
                                             </div>
                                         </div>
-                                         <div class="field item form-group">
-                                            <label class="col-form-label col-md-3 col-sm-3  label-align">Estado: <span class="required">*</span></label>
-                                            <div class="col-md-6 col-sm-6">
-                                            	<select id="heard" class="form-control" disabled>
-													<option value="1">Activo</option>
-													<option value="2">Modificado</option>
-													<option value="3">Eliminado</option>
-												</select>
                                         
-                                        </div>
-                                        </div>
                                   
                                         </div>
                                         <div class="ln_solid">

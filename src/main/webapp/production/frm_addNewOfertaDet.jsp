@@ -100,7 +100,7 @@
 									<ul class="nav child_menu">
 										<li><a href="tbl_modalidad.jsp">Modalidad</a></li>
 										<li><a href="tbl_capacitacion.jsp">Capacitacion</a></li>
-										<li><a href="tbl_facilitador">Facilitador</a></li>
+										<li><a href="tbl_facilitador.jsp">Facilitador</a></li>
 										<li><a href="tbl_oferta.jsp">Oferta</a></li>
 									</ul>
 								</li>
@@ -262,6 +262,10 @@
 													ArrayList<Vw_Capacitacion> listaCap = new ArrayList<Vw_Capacitacion>();
 													Dt_capacitacion dtc = new Dt_capacitacion();
 													listaCap = dtc.listaCapActivos();
+													
+													ArrayList<Facilitador> listaF = new ArrayList<Facilitador>();
+													Dt_Facilitador dtf = new Dt_Facilitador();
+													listaF = dtf.listaFaciActivos();
 												%>
                                             	<select id="capacitacion" name="capacitacion" class="form-control js-example-basic-single">
 													<option value="">...Seleccione</option>
@@ -277,7 +281,9 @@
                                             <div class="col-md-6 col-sm-6">
                                             	<select id="facilitador" name="facilitador" class="form-control js-example-basic-single">
 													<option value="0">...Seleccione</option>
-													<option value="1">Juan Pablo</option>
+													<%for(Facilitador f: listaF){ %>
+														<option value="<%=f.getId_facilitador()%>"><%=f.getNombre_completo() %></option>
+													<%} %>
 													<option value="2">Maria Jose</option>
 												</select>
                                             </div>
