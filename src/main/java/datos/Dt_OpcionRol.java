@@ -5,6 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import entidades.Opcion;
+import entidades.Rol;
 import entidades.OpcionRol;
 
 public class Dt_OpcionRol {
@@ -107,3 +110,4 @@ public class Dt_OpcionRol {
 			return guardado;
 		}
 }
+
